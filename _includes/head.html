@@ -6,9 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="Corban Mailloux">
-        <!--link rel="shortcut icon" href="../../assets/ico/favicon.ico"-->
 
-        <title>{{ page.title }}</title>
+        <!-- Icons -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <title>{{ page.title }} · Corban Mailloux</title>
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
@@ -18,7 +21,6 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <!--link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"-->
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -38,13 +40,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Corban Mailloux</a>
+                    <a class="navbar-brand" href="{{ site.url }}">Corban Mailloux</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="{{ site.url }}/about">About</a></li>
+                        <li><a href="{{ site.url }}/contact">Contact</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
