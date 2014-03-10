@@ -4,3 +4,8 @@ pygments: true
 encoding: UTF-8
 
 url: http://corbanmailloux.github.io
+
+# Owner/author information
+owner:
+    name:           Corban
+    full-name:      Corban Mailloux
