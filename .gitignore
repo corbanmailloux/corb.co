@@ -4,5 +4,5 @@ _site/
 
 # Sublime Text - workspace files are user-specific
 *.sublime-workspace
-# For now, I'll leave out the Sublime project file.
-*.sublime-project
+# Don't exclude project files anymore.
+#*.sublime-project
