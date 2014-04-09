@@ -1,0 +1,44 @@
+---
+layout:         default
+title:          TVList
+---
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1>
+                {{ page.title }}
+                <small></small>
+            </h1>
+        </div>
+
+        <div class="media">
+            <img src="/images/projects/tvlist/TVList_screenshot.png" alt="TVList screenshot" class="img-responsive pull-left media-object">
+            <p>
+                TVList is a simple Java 1.7 media manager for TV collections that span multiple drives or folders.
+                <br>
+                It is based on the same code as <a href="/projects/movielist">MovieList</a>, but it is modified to work for a specific folder and file name structure.
+                <br>
+                TVList allows a user to quickly search through a large TV collection that may span multiple drives or folders. It does this by quickly looking through each folder given to it, indexing the folders (TV shows), checking the internal season folders, finding the highest numbered episode, and keeping an organized list of all of the information found.
+                <br>
+                It does real-time searching, lists all of the file types in a given show, and has the ability to open a TV show folder in Windows Explorer or even list duplicate entries.
+                <br><br>
+                TVList expects the following folder structure in each of the folders specified in the TVList.properties file. In a future version, I hope to make this configurable, but it isn't currently.:
+                <ul>
+                    <li>TV Show Name</li>
+                    <ul>
+                        <li>Season XX</li>
+                        <ul>
+                            <li>TV Show Name - SXXEYY - Episode Name.ZZZ</li>
+                        </ul>
+                    </ul>
+                </ul>
+                <br>
+                The code, and a compiled JAR file, are available on <a href="https://github.com/corbanmailloux/TVList" target="_blank">GitHub</a>.
+                <br>
+                Any questions can be directed at TVList@corb.co.
+            </p>
+        </div>
+
+    </div>
+</div>
