@@ -1,6 +1,6 @@
 ---
 layout:         default
-title:          TVList
+title:          RGBDuino
 ---
 
 <div class="row">
@@ -49,7 +49,6 @@ title:          TVList
             <br>
             It looks like this (and is also attached below as an INO file):
             <br>
-            <pre>
 {% highlight c linenos %}
 //PWM pins for the LEDs
 #define redpin 9
@@ -101,10 +100,7 @@ void loop() {
   analogWrite(greenpin, greenvalue);
   analogWrite(bluepin, bluevalue);
 }
-
-
 {% endhighlight %}
-            </pre>
             <br>
             Any questions can be directed at RGBDuino@corb.co.
         </p>
