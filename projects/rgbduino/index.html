@@ -33,9 +33,11 @@ title:          TVList
             The 12 volt power source connects to GND and the common anode on the LED strip.
             <br><br>
             The parts I used were:
-            MOSFETS: <a href="http://www.sparkfun.com/products/10213" target="_blank">http://www.sparkfun.com/products/10213</a>
-            Bluetooth Module: <a href="http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299" target="_blank">http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299</a>
-            Arduino: <a href="http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037" target="_blank">http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037</a>
+            <ul>
+                <li>MOSFETS: <a href="http://www.sparkfun.com/products/10213" target="_blank">http://www.sparkfun.com/products/10213</a></li>
+                <li>Bluetooth Module: <a href="http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299" target="_blank">http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299</a></li>
+                <li>Arduino: <a href="http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037" target="_blank">http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037</a></li>
+            </ul>
             <br><br>
 
             <h2>Software</h2>
@@ -47,15 +49,62 @@ title:          TVList
             <br>
             It looks like this (and is also attached below as an INO file):
             <br>
-            <div class="well">
-                <pre>
-{% highlight ruby linenos %}
-def foo
-    puts 'foo'
-end
+            <pre>
+{% highlight c linenos %}
+//PWM pins for the LEDs
+#define redpin 9
+#define greenpin 10
+#define bluepin 11
+
+//set up SoftwareSerial for the bluetooth module.
+#include &lt;SoftwareSerial.h&gt;
+#define SoftRx 2
+#define SoftTx 3
+SoftwareSerial BTSerial(SoftRx, SoftTx);
+
+//color variables 
+int redvalue=0;
+int greenvalue=0;
+int bluevalue=0;
+
+void setup(){ 
+  //configure pins
+  pinMode(SoftRx, INPUT);
+  pinMode(SoftTx, OUTPUT);
+  pinMode(redpin, OUTPUT);
+  pinMode(greenpin, OUTPUT);
+  pinMode(bluepin, OUTPUT);
+  //check for proper baud rate
+  BTSerial.begin(9600);
+} 
+
+
+void loop() {
+  //App Inventor sends three bytes (RGB, 0 to 255).
+  if ( BTSerial.available() &gt; 2){
+    //make sure it's 3 bytes
+    if ( BTSerial.available() == 3){
+      //read each of the 3 bytes for brightness into the variables
+      redvalue=BTSerial.read(); 
+      greenvalue=BTSerial.read();
+      bluevalue=BTSerial.read();
+      //flush the buffer
+      BTSerial.flush();
+    } 
+    else {
+      //if the data is not 3 bytes treat it as invalid and flush the buffer.
+      BTSerial.flush();
+    }
+  } 
+  //write the current values to the pwm pins.
+  analogWrite(redpin, redvalue);
+  analogWrite(greenpin, greenvalue);
+  analogWrite(bluepin, bluevalue);
+}
+
+
 {% endhighlight %}
-                </pre>
-            </div>
+            </pre>
             <br>
             Any questions can be directed at RGBDuino@corb.co.
         </p>
