@@ -24,15 +24,17 @@ title:          TVList
                 It does real-time searching, lists all of the file types in a given show, and has the ability to open a TV show folder in Windows Explorer or even list duplicate entries.
                 <br><br>
                 TVList expects the following folder structure in each of the folders specified in the TVList.properties file. In a future version, I hope to make this configurable, but it isn't currently.:
-                <ul>
-                    <li>TV Show Name</li>
+                <div class="well well-sm">
                     <ul>
-                        <li>Season XX</li>
+                        <li>TV Show Name</li>
                         <ul>
-                            <li>TV Show Name - SXXEYY - Episode Name.ZZZ</li>
+                            <li>Season XX</li>
+                            <ul>
+                                <li>TV Show Name - SXXEYY - Episode Name.ZZZ</li>
+                            </ul>
                         </ul>
                     </ul>
-                </ul>
+                </div>
                 <br>
                 The code, and a compiled JAR file, are available on <a href="https://github.com/corbanmailloux/TVList" target="_blank">GitHub</a>.
                 <br>
