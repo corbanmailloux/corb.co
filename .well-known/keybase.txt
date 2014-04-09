@@ -1,0 +1,65 @@
+==================================================================
+https://keybase.io/corbanmailloux
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://corb.co
+  * I am corbanmailloux (https://keybase.io/corbanmailloux) on keybase.
+  * I have a public key with fingerprint CA0D 8FC9 7FD6 B456 570B  2A71 E16F 7376 A681 1A50
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "ca0d8fc97fd6b456570b2a71e16f7376a6811a50",
+            "host": "keybase.io",
+            "key_id": "e16f7376a6811a50",
+            "uid": "1e2316608a21e35dc26d1ed900005d00",
+            "username": "corbanmailloux"
+        },
+        "service": {
+            "hostname": "corb.co",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1397029165,
+    "expire_in": 157680000,
+    "prev": "800bfa52de9a73e3a13491af4991c723c62df7ff337f2aa602e98b5a5f37b98f",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.5
+Comment: https://keybase.io/crypto
+
+yMHpAnicbZFtSBRbGMd3r90sMRG1pPTTQRBs3eZlZ87OXlJxCyRYNDTEsLYzM2d0
+cp3ZZnd9QdaVArFAbmEZvlALYkKFSEbQB1/ySgW+RJR51Q8lKvQlBM1CKvTMUtCH
+5svwPM/v/3/+h2fyQJwlwbo9eifzkXw2Yp0a3whZSk9s5zYBUZcbgasJ1ODYT1G1
+Kmz4DVULAheQECU7FUmAisyLDo7nICUyCNKY5hXIQh7xTppGHAVsoFoPmApiI6IA
+tqs66ZHCq8qk+wc+FBvQmGFpnqeciKExy8kSw8s0lgWKfJxMxcAANjRUi804uiEi
+rRapPp8eagBhGyCzOlUis6ZYgN84u2Qm8Bt6UJd0H2lWB4N+l6kJNvpNqB6L3p9y
+r6hqMnk4EdRhI6DqGnDRhJSCqulHswKkGIHmORvADX7VwF7VJDjIO82g5hpcRyxJ
+JSqIY2QsIMhiFtGsQ6CR4hAEWoIMK/GMrEBFYVmoMAjxFIMFp8ghTmGhKDgVsj+A
+L2k6cDlITFRFLANqlYaCIQOD8MR45R6LNcGy9++/zNNZEvYn/zpobnf8zsmnXfva
+10OT1jH4siep5Yq9cyWzPfrcuB/96ul7Oxepn097sdpfvlxzo2AN5yhDbRWl1xcr
+ZlMSu0Fh2kQ0pXxx3R02Zja+21eOrqffVbPdtuPza1uJKw/m1RyP40jW6KHpi//l
+vWcLWqffNJ/Z6klqu/mqZnjnvGWkeDkuVT2nj4wNnh785Ox5d7X5/2+lJR8Wuh7/
+68v+jPpKCqeeFJ16DTIgP9i1+mM0qTOcUbyV25oeJ3y8dvufhfzUajArHXa3Dw/E
+p/EDHZFKWCY/PLbsKZpwdWyi3mjjwgw/k5dYNrT5ZSl0uTcbRtwXsvrnnsnJzUue
+W/cOtlD5zC7a0xS/
+=XTid
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/corbanmailloux
+
+==================================================================
