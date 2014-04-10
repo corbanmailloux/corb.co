@@ -15,3 +15,6 @@ owner:
 
 # For keybase.io verification
 include: [".well-known"]
+
+# Limit what is hosted on the site.
+exclude: ["runServer.bat"]
