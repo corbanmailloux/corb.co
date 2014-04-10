@@ -17,4 +17,4 @@ owner:
 include: [".well-known"]
 
 # Limit what is hosted on the site.
-exclude: ["runServer.bat"]
+exclude: ["runServer.bat", "CNAME", "corbanmailloux.github.io Project.sublime-project", "corbanmailloux.github.io Project", "Gemfile", "Gemfile.lock", "README.md"]
