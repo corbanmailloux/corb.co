@@ -1,8 +1,8 @@
+# GIT Ignore for corbanmailloux.github.io (corb.co).
+
 # Jekyll - the "_site" directory is basically a compiled version of the website.
 _site/
 
 
 # Sublime Text - workspace files are user-specific
 *.sublime-workspace
-# Don't exclude project files anymore.
-#*.sublime-project
