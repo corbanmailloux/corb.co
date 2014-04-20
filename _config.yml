@@ -12,7 +12,6 @@ owner:
     # Gravatar Image (used in About Page)
     image: 			http://s.gravatar.com/avatar/3993a2a8a38ac82b7f8ba71defb76031
 
-
 # For keybase.io verification
 include: [".well-known"]
 
