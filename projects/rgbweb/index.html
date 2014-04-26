@@ -24,13 +24,13 @@ title:          RGBWeb
             RGBWeb has also been built with many new features that RGBDuino never had. While many could be implemented on RGBDuino, I will probably not add the features. The code is all available on the project page for <a href="/project/rgbduino" target="_blank">RGBDuino</a>, and anyone is welcome to modify and add features. My only wish is that you give partial credit back to me, Corban Mailloux, if you make a new product with the code. I would also love to hear about developments people are making on my code, so please keep me updated at RGBDuino@corb.co. 
             <br><br>
             RGBWeb is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over the internet. The project consists of three main parts: the hardware side (Arduino), the server configuration, and the Android software.
-            <br><br>
-
-            <h2>Video</h2>
-            First, a demonstration:
             <br>
-            <h2> *** VIDEO *** </h2>
-            <br><br>
+
+            <h2>Screenshot</h2>
+            This is what the app looks like:
+            <br>
+            <img src="/images/projects/rgbweb/RGBWeb_screenshot.png" alt="RGBWeb screenshot" class="img-thumbnail">
+            <br>
 
             <h2>Hardware (Arduino)</h2>
             The Arduino has very similar wiring to RGBDuino. The only difference is that RGBWeb does not have the Bluetooth module attached. See the <a href="/project/rgbduino" target="_blank">RGBDuino</a> project page for an image of the basic configuration. 
@@ -44,7 +44,7 @@ title:          RGBWeb
                 <li>MOSFETS: <a href="http://www.sparkfun.com/products/10213" target="_blank">http://www.sparkfun.com/products/10213</a></li>
                 <li>Arduino: <a href="http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037" target="_blank">http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037</a></li>
             </ul>
-            <br><br>
+            <br>
 
             <h2>Server Configuration</h2>
             The server configuration was the part of this project that gave me the most trouble. At different times, I've had this project running on two different types of servers. It was running on an Apache server running on my main computer, but now it is running on a Windows Server 2012 Datacenter machine that is my general purpose server.
@@ -63,8 +63,7 @@ title:          RGBWeb
             <br><br>
             The other web page is not much of a page at all; it contains almost no HTML and is only intended to be accessed by the Android app. It uses PHP POST requests sent by the Android app to get commands. This is the page that handles more complex features, such as password protection (very basic and unencrypted) and other custom commands like fading.
             <br><br>
-            <h3 class="text-error">Not correct!</h3>
-            The actual PHP files are in the downloads below. There is also a zip file containing all of the files in a working folder structure.
+            The actual PHP files, in the correct folder structure on on Github (see link below).
             <br><br>
             The basic setup of the server is like this:
             <ol>
@@ -74,10 +73,9 @@ title:          RGBWeb
                 <li>Update the PHP code to reference the correct COM port, and to use a password of your choosing.</li>
                 <li>Run the server.</li>
             </ol>
-            <br><br>
+            <br>
 
             <h2>Software</h2>
-            <h3 class="text-error">Not correct!</h3>
             The Android app was written using MIT's App Inventor. The project source and a compiled APK version of the app are available on <a href="https://github.com/corbanmailloux/rgbweb" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
             <br><br>
             Any questions can be directed at RGBWeb@corb.co.
