@@ -15,9 +15,11 @@ imgsize: 200
 
         {% include socialButtons.html %}
 
-        <div class="media">
-            <img src="{{ site.owner.image }}?size={{ page.imgsize }}" alt="{{ site.owner.name }}'s photo" class="img-rounded img-responsive pull-left media-object">
-            <div class="media-body">
+        <div class="row">
+            <div class="col-lg-2 col-md-3">
+                <img src="{{ site.owner.image }}?size={{ page.imgsize }}" alt="{{ site.owner.name }}'s photo" class="img-rounded img-responsive">
+            </div>
+            <div class="col-lg-10 col-md-9">
                 <p>
                     I'm Corban Mailloux. Nice to "meet" you. I'm currently a student at Rochester Institute of Technology in Rochester, NY pursuing a BS in Software Engineering. In the summer, and when I have extra time, I work as a "Junior Developer" <i>(read: intern)</i> at <a href="http://mobiusworks.com/" target="_blank">Mobius Works</a> in Westfield, MA.
                     <br><br>
