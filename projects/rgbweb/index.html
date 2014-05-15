@@ -26,13 +26,13 @@ title:          RGBWeb
             RGBWeb is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over the internet. The project consists of three main parts: the hardware side (Arduino), the server configuration, and the Android software.
             <br>
 
-            <h2>Screenshot</h2>
+            <h2 id="screenshot">Screenshot</h2>
             This is what the app looks like:
             <br>
             <img src="/images/projects/rgbweb/RGBWeb_screenshot.png" alt="RGBWeb screenshot" class="img-thumbnail">
             <br>
 
-            <h2>Hardware (Arduino)</h2>
+            <h2 id="hardware">Hardware (Arduino)</h2>
             The Arduino has very similar wiring to RGBDuino. The only difference is that RGBWeb does not have the Bluetooth module attached. See the <a href="/project/rgbduino" target="_blank">RGBDuino</a> project page for an image of the basic configuration. 
             <br>
             Essentially, the Arduino receives commands over the USB (serial) connection. The power N-channel MOSFETS have their gate legs (left legs) connected to PWM pins 9, 10, and 11. Each gate leg is also connected through a resistor to GND. While there may be an optimal value for this resistor, I have found that this setup is not picky about resistance. The drain leg (middle leg) is connected to one of the negative returns from the LED strip. The source legs (right leg) are all connected to GND.
@@ -46,7 +46,7 @@ title:          RGBWeb
             </ul>
             <br>
 
-            <h2>Server Configuration</h2>
+            <h2 id="server">Server Configuration</h2>
             The server configuration was the part of this project that gave me the most trouble. At different times, I've had this project running on two different types of servers. It was running on an Apache server running on my main computer, but now it is running on a Windows Server 2012 Datacenter machine that is my general purpose server.
             <br>
             I discovered that the biggest problem was ensuring a basic server was established and that the server was properly configured to run PHP. 
@@ -75,7 +75,7 @@ title:          RGBWeb
             </ol>
             <br>
 
-            <h2>Software</h2>
+            <h2 id="software">Software</h2>
             The Android app was written using MIT's App Inventor. The project source and a compiled APK version of the app are available on <a href="https://github.com/corbanmailloux/rgbweb" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
             <br><br>
             Any questions can be directed at RGBWeb@corb.co.
