@@ -1,0 +1,76 @@
+---
+layout:         default
+title:          CarPuter
+---
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="page-header">
+            <h1>
+                {{ page.title }}
+                <small></small>
+            </h1>
+        </div>
+
+        <div class="alert alert-warning">
+            <p>
+                This is an in-progess project. This project page will be updated over time.
+            </p>
+        </div>
+
+        <p>
+            CarPuter is a project to take my base-model car and add feature I want to it. I'll be adding:
+            <ul>
+            	<li>Power windows</li>
+            	<li>Power locks</li>
+            	<li>Keyless entry</li>
+            	<li>A tablet-based center console that allows interaction with all of the added features</li>
+            	<li>An OBD-II connection to display real-time car engine information</li>
+            	<li>Likely much more, over time</li>
+            </ul>
+
+            <!--
+
+
+            RGBDuino is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over Bluetooth. The project consists of two main parts: the hardware side and the software side.
+            <br><br>
+
+            <h2 id="video">Video</h2>
+            First, a demonstration:
+            <br>
+            <iframe width="420" height="315" src="//www.youtube.com/embed/wHQVE32OFiM" frameborder="0" allowfullscreen></iframe>
+            <br><br>
+
+            <h2 id="hardware">Hardware</h2>
+            For the hardware end of things, I used a breadboard-able version of an Arduino. Any Arduino or Arduino clone should work.
+            <br>
+            <img src="/images/projects/rgbduino/RGBDuino_bb.png" alt="Breadboard layout" class="img-responsive">
+            <br><br>
+            Essentially, the Arduino receives bytes from the Serial Module through digital pin 2 and sends data through digital pin 3. The power N-channel MOSFETS have their gate legs (left legs) connected to PWM pins 9, 10, and 11. Each gate leg is also connected through a resistor to GND. The drain leg (middle leg) is connected to one of the negative returns from the LED strip. The source legs (right leg) are all connected to GND.
+            <br>
+            The 12 volt power source connects to GND and the common anode on the LED strip.
+            <br><br>
+            The parts I used were:
+            <ul>
+                <li>MOSFETS: <a href="http://www.sparkfun.com/products/10213" target="_blank">http://www.sparkfun.com/products/10213</a></li>
+                <li>Bluetooth Module: <a href="http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299" target="_blank">http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299</a></li>
+                <li>Arduino: <a href="http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037" target="_blank">http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037</a></li>
+            </ul>
+            <br><br>
+
+            <h2 id="software">Software</h2>
+            The Android app was written using MIT's App Inventor. The project source and a compiled APK version of the app are available on <a href="https://github.com/corbanmailloux/RGBDuino" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
+            <br><br>
+            The Arduino side of the project uses the SoftwareSerial Library to listen to the Bluetooth module. This could be done with the built in Serial pins, but that would make it difficult to upload new code while testing.
+            <br>
+            It looks like this (and is also on <a href="https://github.com/corbanmailloux/RGBDuino" target="_blank"><i class="fa fa-github"></i> GitHub</a>):
+            <br>
+            {% gist 10233976 %}
+            -->
+
+            <br>
+            Any questions can be directed at CarPuter@corb.co.
+            <br>
+        </p>
+    </div>
+</div>
