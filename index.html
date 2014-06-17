@@ -1,7 +1,7 @@
 ---
-layout: default
-title: Welcome to corb.co!
-imgsize: 200
+layout:         default
+title:          Welcome to corb.co!
+imgsize:        200
 ---
 
 <div class="row">
@@ -15,15 +15,11 @@ imgsize: 200
 
         {% include socialButtons.html %}
 
-        <br>
-
-        <div class="row">
-            <div class="col-lg-2 col-md-3">
-                <img src="{{ site.owner.image }}?size={{ page.imgsize }}" alt="{{ site.owner.name }}'s photo" class="img-rounded img-responsive">
-            </div>
-            <div class="col-lg-10 col-md-9">
+        <div class="media">
+            <img src="{{ site.owner.image }}?size={{ page.imgsize }}" alt="{{ site.owner.name }}'s photo" class="img-rounded img-responsive pull-left media-object">
+            <div class="media-body">
                 <p>
-                    I'm Corban Mailloux. Nice to "meet" you. I'm currently a student at Rochester Institute of Technology in Rochester, NY pursuing a BS in Software Engineering. In the summer, and when I have extra time, I work as a "Junior Developer" <i>(read: intern)</i> at <a href="http://mobiusworks.com/" target="_blank">Mobius Works</a> in Westfield, MA.
+                    I'm Corban Mailloux. Nice to "meet" you. I'm a student at Rochester Institute of Technology in Rochester, NY pursuing a BS in Software Engineering. Currently, I work as a "Junior Developer" <i>(read: intern)</i> at <a href="http://mobiusworks.com/" target="_blank">Mobius Works</a> in Westfield, MA.
                     <br><br>
                     I originally set up this site to play with <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>, but as I added to it, I decided that I would make it my main website.
                     <br><br>
