@@ -1,9 +1,31 @@
 <html>
 	<head>
 		<title>Thanks.</title>
+		<script LANGUAGE="JavaScript">
+			var theImages = new Array()
+
+			theImages[0] = 'https://s3.amazonaws.com/uploads.hipchat.com/172047/1241353/wtPPv2Vp8yV9kf8/Thanks%20-%20Mine.gif'
+			theImages[1] = 'https://s3.amazonaws.com/uploads.hipchat.com/172047/1241353/pyqjVrRfYVyXx30/Thanks-Gilmore.gif'
+			theImages[2] = 'http://thanks.tysonholub.com/thanks.gif'
+
+			var j = 0
+			var p = theImages.length;
+			var preBuffer = new Array()
+			for (i = 0; i < p; i++){
+				preBuffer[i] = new Image()
+				preBuffer[i].src = theImages[i]
+			}
+			var whichImage = Math.round(Math.random()*(p-1));
+
+			function showImage(){
+				document.write('<img src="'+theImages[whichImage]+'" alt="Thanks">');
+			}
+		</script>
 	</head>
 	<body>
-		<img src="https://s3.amazonaws.com/uploads.hipchat.com/172047/1241353/wtPPv2Vp8yV9kf8/Thanks%20-%20Mine.gif" alt="Thanks">
+		<script LANGUAGE="JavaScript">
+			showImage();
+		</script>
 
 		<!-- Yeah, Google's tracking you. Sorry. -->
 		<script>
