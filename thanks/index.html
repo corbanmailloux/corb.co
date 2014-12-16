@@ -2,16 +2,24 @@
 	<head>
 		<title>Thanks.</title>
 		<script LANGUAGE="JavaScript">
+			// gfycat code
+			(function(d, t) {
+				var g = d.createElement(t),
+					s = d.getElementsByTagName(t)[0];
+				g.src = 'http://assets.gfycat.com/js/gfyajax-0.517d.js';
+				s.parentNode.insertBefore(g, s);
+			}(document, 'script'));
+
+			// gfycat data IDs
 			var theImages = [
-				'https://s3.amazonaws.com/uploads.hipchat.com/172047/1241353/wtPPv2Vp8yV9kf8/Thanks%20-%20Mine.gif',
-				'https://s3.amazonaws.com/uploads.hipchat.com/172047/1241353/pyqjVrRfYVyXx30/Thanks-Gilmore.gif',
-				'http://thanks.tysonholub.com/thanks.gif',
-				'http://media.giphy.com/media/hrBSJ2So6iTo4/giphy.gif'
+				'AcclaimedAnxiousFrogmouth',
+				'UnselfishEagerDwarfmongoose',
+				'FrayedDimCentipede'
 			];
 
 			function showImage(){
 				var whichImage = Math.floor(Math.random() * theImages.length);
-				document.write('<img src="' + theImages[whichImage] + '" alt="Thanks">');
+				document.write('<img class="gfyitem" data-id="' + theImages[whichImage] + '" alt="Thanks">');
 			}
 		</script>
 	</head>
