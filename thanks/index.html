@@ -9,9 +9,8 @@
 				'http://media.giphy.com/media/hrBSJ2So6iTo4/giphy.gif'
 			];
 
-			var whichImage = Math.floor(Math.random() * (theImages.length + 1));
-
 			function showImage(){
+				var whichImage = Math.floor(Math.random() * theImages.length);
 				document.write('<img src="' + theImages[whichImage] + '" alt="Thanks">');
 			}
 		</script>
