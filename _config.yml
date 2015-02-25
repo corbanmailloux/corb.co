@@ -1,6 +1,6 @@
 name: corbanmailloux
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 encoding: UTF-8
 
 url: http://corb.co
