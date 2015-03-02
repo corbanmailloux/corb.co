@@ -8,147 +8,33 @@ title:          Projects
         <div class="page-header">
             <h1>
                 {{ page.title }}
-                <small>A collection of projects that I have worked on recently.</small>
+                <small>Just some of my projects. Most (and more) available on my <a href="https://github.com/corbanmailloux/" target="_blank"><i class="fa fa-github"></i> GitHub</a></small>
             </h1>
         </div>
 
-        <!-- Media Projects -->
+        {% assign projectgroups = site.projectgroups | sort: "weight" %}
+        {% for projectgroup in projectgroups reversed %}
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#projects" href="#Media">
-                        Media Managers
+                    <a data-toggle="collapse" data-parent="#projects" href="#{{ projectgroup.title | escape }}">
+                        {{ projectgroup.title }}
                     </a>
                 </h4>
             </div>
-            <div id="Media" class="panel-collapse collapse in">
-                <!-- Table -->
+            <div id="{{ projectgroup.title | escape }}" class="panel-collapse collapse in">
                 <table class="table table-striped table-hover">
-                    <!--thead>
-                        <tr>
-                            <th class="col-md-3">Name/Link</th>
-                            <th class="col-md-9">Description</th>
-                        </tr>
-                    </thead-->
                     <tbody>
+                        {% for project in site.projects %}{% if project.group == projectgroup.group %}
                         <tr>
-                            <td class="col-md-3"><a href="/projects/medialist">MediaList</a></td>
-                            <td class="col-md-9">A combined, efficient media manager for TV and movie collections spanning multiple drives and/or folders.</td>
+                            <td class="col-md-3"><a href="{{ project.url }}">{{ project.title }}</a></td>
+                            <td class="col-md-9">{{ project.subtitle }}</td>
                         </tr>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/tvlist">TVList</a></td>
-                            <td class="col-md-9">Simple media manager for TV collections spanning multiple drives and/or folders.</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/movielist">MovieList</a></td>
-                            <td class="col-md-9">Simple media manager for movie collections spanning multiple drives and/or folders.</td>
-                        </tr>
+                        {% endif %}{% endfor %}
                     </tbody>   
                 </table>
             </div>
-        </div><!-- /Media Projects -->
-
-
-        <!-- Sublime Projects -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#projects" href="#Sublime">
-                        Sublime Text - Highlighting and Build Systems
-                    </a>
-                </h4>
-            </div>
-            <div id="Sublime" class="panel-collapse collapse in">
-                <!-- Table -->
-                <table class="table table-striped table-hover">
-                    <!--thead>
-                        <tr>
-                            <th class="col-md-3">Name/Link</th>
-                            <th class="col-md-9">Description</th>
-                        </tr>
-                    </thead-->
-                    <tbody>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/sublime-mit-alloy">Sublime-MIT-Alloy</a></td>
-                            <td class="col-md-9">Sublime Text 3 - MIT Alloy syntax highlighting.</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/sublime-promela-spin">Sublime-Promela-Spin</a></td>
-                            <td class="col-md-9">Sublime Text 3 - Promela Spin syntax highlighting and build system.</td>
-                        </tr>
-                    </tbody>   
-                </table>
-            </div>
-        </div><!-- /Sublime Projects -->
-
-
-        <!-- Arduino Projects -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#projects" href="#Arduino">
-                        <i class="icon-angle-down"></i>Arduino
-                    </a>
-                </h4>
-            </div>
-            <div id="Arduino" class="panel-collapse collapse in">
-                <!-- Table -->
-                <table class="table table-striped table-hover">
-                    <!--thead>
-                        <tr>
-                            <th class="col-md-3">Name/Link</th>
-                            <th class="col-md-9">Description</th>
-                        </tr>
-                    </thead-->
-                    <tbody>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/rgbduino">RGBDuino</a></td>
-                            <td class="col-md-9">Bluetooth control of RGB LEDs with Arduino and Android.</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/rgbweb">RGBWeb</a></td>
-                            <td class="col-md-9">An evolution of RGBDuino, using the web instead of Bluetooth.</td>
-                        </tr>
-                    </tbody>   
-                </table>
-            </div>
-        </div><!-- /Arduino Projects -->
-
-
-        <!-- Misc. Projects -->
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse" data-parent="#projects" href="#Misc">
-                        Misc.
-                    </a>
-                </h4>
-            </div>
-            <div id="Misc" class="panel-collapse collapse in">
-                <!-- Table -->
-                <table class="table table-striped table-hover">
-                    <!--thead>
-                        <tr>
-                            <th class="col-md-3">Name/Link</th>
-                            <th class="col-md-9">Description</th>
-                        </tr>
-                    </thead-->
-                    <tbody>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/thanks">thanks.corb.co</a></td>
-                            <td class="col-md-9">The thanks GIF randomizer.</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/noteplaid">Noteplaid</a></td>
-                            <td class="col-md-9">A plaid text editor. Perfect for hipsters.</td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-3"><a href="/projects/carputer">CarPuter</a></td>
-                            <td class="col-md-9">It's a computer... in a car.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div><!-- /Misc. Projects -->
+        </div><!-- /{{ projectgroup.title }} -->
+        {% endfor %}
     </div>
 </div>

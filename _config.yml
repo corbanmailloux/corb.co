@@ -22,7 +22,9 @@ exclude: ["runServer.bat", "CNAME", "corbanmailloux.github.io Project.sublime-pr
 collections:
   projects:
     output: true
-    permalink: /projects/test/:path/
+    permalink: /projects/:path/
+  projectgroups:
+    output: false
 
 defaults:
   -
@@ -31,3 +33,11 @@ defaults:
       type: "projects"
     values:
       layout: "project"
+      group: "uncategorized"
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "projectgroups"
+    values:
+      weight: 10
+
