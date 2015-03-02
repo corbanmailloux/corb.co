@@ -1,0 +1,54 @@
+---
+title:          TVList
+subtitle:       Simple media manager for TV collections spanning multiple drives and/or folders.
+---
+
+<div class="alert alert-success">
+    <h4>Update</h4>
+    <p>
+        This project has been reimplemented in C# and combined with <a href="/projects/movielist">MovieList</a> to create a new, fast, clean, all-in-one media manager, aptly named <a href="/projects/medialist">MediaList</a>. Be sure to check that project out for updates, as I'll probably stop playing with MovieList and TVList now.
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="/images/projects/tvlist/TVList_screenshot.png" alt="TVList screenshot" class="img-responsive">
+    </div>
+    <div class="col-md-8">
+        <p>
+            TVList is a simple Java 1.7 media manager for TV collections that span multiple drives or folders.
+        </p>
+        <p>
+            It is based on the same code as <a href="/projects/movielist">MovieList</a>, but it is modified to work for a specific folder and file name structure.
+        </p>
+        <p>
+            TVList allows a user to quickly search through a large TV collection that may span multiple drives or folders. It does this by quickly looking through each folder given to it, indexing the folders (TV shows), checking the internal season folders, finding the highest numbered episode, and keeping an organized list of all of the information found.
+        </p>
+        <p>
+            It does real-time searching, lists all of the file types in a given show, and has the ability to open a TV show folder in Windows Explorer or even list duplicate entries.
+        </p>
+        <br>
+        <p>
+            TVList expects the following folder structure in each of the folders specified in the TVList.properties file. In a future version, I hope to make this configurable, but it isn't currently:
+        </p>
+        <div class="well well-sm">
+            <ul>
+                <li>TV Show Name
+                    <ul>
+                        <li>Season XX
+                            <ul>
+                                <li>TV Show Name - SXXEYY - Episode Name.ZZZ</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <p>
+            The code, and a compiled JAR file, are available on <a href="https://github.com/corbanmailloux/TVList" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
+        </p>
+        <p>
+            Any questions can be directed at TVList@corb.co.
+        </p>
+    </div>
+</div>

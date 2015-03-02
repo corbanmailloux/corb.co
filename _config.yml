@@ -17,3 +17,17 @@ include: [".well-known"]
 
 # Limit what is hosted on the site.
 exclude: ["runServer.bat", "CNAME", "corbanmailloux.github.io Project.sublime-project", "corbanmailloux.github.io Project.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md"]
+
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/test/:path/
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "projects"
+    values:
+      layout: "project"
