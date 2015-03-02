@@ -1,7 +1,6 @@
 ---
 layout:         default
 title:          Welcome to corb.co!
-imgsize:        200
 ---
 
 <div class="row">
@@ -14,9 +13,12 @@ imgsize:        200
 
         {% include socialButtons.html %}
 
-        <div class="media">
-            <img src="{{ site.owner.image }}?size={{ page.imgsize }}" alt="{{ site.owner.name }}'s photo" class="img-rounded img-responsive pull-left media-object">
-            <div class="media-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="/images/corban-mailloux.png" alt="Corban Mailloux" class="img-rounded img-responsive">
+            </div>
+            <div class="col-sm-9">
+                <br>
                 <p>
                     I'm Corban Mailloux. Nice to "meet" you. I'm a student at Rochester Institute of Technology in Rochester, NY pursuing a BS in Software Engineering. Currently, I work part-time as a developer at <a href="http://mobiusworks.com/" target="_blank">Mobius Works</a> in Westfield, MA, developing custom software and also customizations to an ERP system called <a href="http://www.epicor.com" target="_blank">Epicor</a>.
                 </p>

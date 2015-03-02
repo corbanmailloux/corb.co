@@ -9,8 +9,6 @@ url: http://corb.co
 owner:
     name:           Corban
     full-name:      Corban Mailloux
-    # Gravatar Image (used in About Page)
-    image:          http://s.gravatar.com/avatar/3993a2a8a38ac82b7f8ba71defb76031
 
 # Limit what is hosted on the site.
 exclude: ["runServer.bat", "CNAME", "corbanmailloux.github.io Project.sublime-project", "corbanmailloux.github.io Project.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md"]
