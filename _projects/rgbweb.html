@@ -1,6 +1,6 @@
 ---
 title:          RGBWeb
-subtitle:       An evolution of <a href="/projects/rgbduino" target="_blank">RGBDuino</a>, using the web instead of Bluetooth.
+subtitle:       An evolution of <a href="/projects/rgbduino/" target="_blank">RGBDuino</a>, using the web instead of Bluetooth.
 group:          arduino
 ---
 
@@ -11,10 +11,10 @@ group:          arduino
 </div>
 
 <p>
-    RGBWeb is an evolution of <a href="/projects/rgbduino" target="_blank">RGBDuino</a> that removes the Bluetooth requirement by using an internet connection. This does, however require a server to remain running with the Arduino attached. 
+    RGBWeb is an evolution of <a href="/projects/rgbduino/" target="_blank">RGBDuino</a> that removes the Bluetooth requirement by using an internet connection. This does, however require a server to remain running with the Arduino attached. 
 </p>
 <p>
-    RGBWeb has also been built with many new features that RGBDuino never had. While many could be implemented on RGBDuino, I will probably not add the features. The code is all available on the project page for <a href="/projects/rgbduino" target="_blank">RGBDuino</a>, and anyone is welcome to modify and add features. My only wish is that you give partial credit back to me, Corban Mailloux, if you make a new product with the code. I would also love to hear about developments people are making on my code, so please keep me updated at RGBDuino@corb.co. 
+    RGBWeb has also been built with many new features that RGBDuino never had. While many could be implemented on RGBDuino, I will probably not add the features. The code is all available on the project page for <a href="/projects/rgbduino/" target="_blank">RGBDuino</a>, and anyone is welcome to modify and add features. My only wish is that you give partial credit back to me, Corban Mailloux, if you make a new product with the code. I would also love to hear about developments people are making on my code, so please keep me updated at RGBDuino@corb.co. 
 </p>
 <p>
     RGBWeb is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over the internet. The project consists of three main parts: the hardware side (Arduino), the server configuration, and the Android software.
@@ -28,7 +28,7 @@ group:          arduino
 
 <h2 id="hardware">Hardware (Arduino)</h2>
 <p>
-    The Arduino has very similar wiring to RGBDuino. The only difference is that RGBWeb does not have the Bluetooth module attached. See the <a href="/projects/rgbduino" target="_blank">RGBDuino</a> project page for an image of the basic configuration. 
+    The Arduino has very similar wiring to RGBDuino. The only difference is that RGBWeb does not have the Bluetooth module attached. See the <a href="/projects/rgbduino/" target="_blank">RGBDuino</a> project page for an image of the basic configuration. 
 </p>
 <p>
     Essentially, the Arduino receives commands over the USB (serial) connection. The power N-channel MOSFETS have their gate legs (left legs) connected to PWM pins 9, 10, and 11. Each gate leg is also connected through a resistor to GND. While there may be an optimal value for this resistor, I have found that this setup is not picky about resistance. The drain leg (middle leg) is connected to one of the negative returns from the LED strip. The source legs (right leg) are all connected to GND.

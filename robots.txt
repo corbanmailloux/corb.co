@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /maggie/
 Disallow: /sam/
+Disallow: /ben/
