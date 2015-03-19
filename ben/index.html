@@ -24,8 +24,14 @@ sitemap:    false
                 var map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
                 
+                // Shim for <=IE8
+                if (!Date.now) {
+                    Date.now = function() { return new Date().getTime(); }
+                }
+
                 var ctaLayer = new google.maps.KmlLayer({
-                    url: "http://corbco.pythonanywhere.com/kml/tracks.kml"
+                    // Keep Google from caching this KML
+                    url: "http://corbco.pythonanywhere.com/kml/tracks.kml?" + (Date.now()).toString()
                 });
                 
                 ctaLayer.setMap(map);
