@@ -2,6 +2,7 @@ name: corbanmailloux
 markdown: redcarpet
 highlighter: pygments
 encoding: UTF-8
+permalink: pretty # to remove the ".html" extension when serving file
 
 url: http://corb.co
 title: corb.co
