@@ -5,3 +5,7 @@
 .navbar-nav > li.dropdown-split-left > a {
   padding-right: 3px;
 }
+
+.btn-group-social {
+  padding-bottom: 10px;
+}
