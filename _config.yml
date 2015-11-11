@@ -4,17 +4,19 @@ highlighter: pygments
 encoding: UTF-8
 
 url: http://corb.co
+title: corb.co
+description: "A personal and projects webpage for Corban Mailloux."
 
 # Owner/author information
 owner:
-    name:           Corban
-    full-name:      Corban Mailloux
+    full-name: "Corban Mailloux"
 
 gems:
   - jekyll-sitemap
 
 # Limit what is hosted on the site.
-exclude: ["runServer.bat", "CNAME", "corbanmailloux.github.io Project.sublime-project", "corbanmailloux.github.io Project.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md"]
+exclude: [
+  "runServer.bat", "CNAME", "corbanmailloux.github.io Project.sublime-project", "corbanmailloux.github.io Project.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md"]
 
 
 collections:
@@ -38,4 +40,9 @@ defaults:
       type: "projectgroups"
     values:
       weight: 10
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
 
