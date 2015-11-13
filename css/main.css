@@ -9,3 +9,8 @@
 .btn-group-social {
   padding-bottom: 10px;
 }
+
+/* For the <spoiler> on ritweek */
+.monospace {
+	font-family: "Courier New", Courier, monospace;
+}
