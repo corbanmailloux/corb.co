@@ -1,7 +1,12 @@
+/*
+ * Insert any additional CSS/SCSS here.
+ */
+
 /* For the split Projects dropdown in the navbar */
 .navbar-nav > li.dropdown-split-right > a {
   padding-left: 3px;
 }
+
 .navbar-nav > li.dropdown-split-left > a {
   padding-right: 3px;
 }
@@ -12,5 +17,5 @@
 
 /* For the <spoiler> on ritweek */
 .monospace {
-	font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
 }
