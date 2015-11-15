@@ -9,16 +9,16 @@
 
         <title>{{ page.title }} · {{ site.title}}</title>
 
-        <!-- syntax highlighting CSS -->
+        <!-- Bootstrap -->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">-->
+        <!-- Bootstrap theme Simplex, from https://bootswatch.com/simplex/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha256-4nVETqQoIoCwuephcXpJ501G8B5sgBHb1ZsKU/D476I= sha512-cfSmkkLRDAcUNaJxRRWopCyEGX43UkWCAOl2wErYMBGOQVWwOsZ7IFuXScF9H/6nMGbmsgV4m5/xYfesyvHTxw==" crossorigin="anonymous">
+
+        <!-- Syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
 
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="/css/main.css">
-
-        <!-- Bootstrap -->
-        <!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"-->
-        <!-- Let's try this for a while. -->
-        <link rel="stylesheet" href="/css/bootstraptheme.min.css">
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
@@ -56,7 +56,7 @@
     </head>
 
     <body>
-        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <!-- Create the hamburger icon expand button for lower resolutions. -->
@@ -67,7 +67,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="/" title="Home">
-                        <img src="/images/logo.png" alt="logo"/>
+                        <span><img src="/images/logo.png" alt="logo"/></span>
                         corb.co
                     </a>
                 </div>
