@@ -2,7 +2,7 @@
  * Insert any additional CSS/SCSS here.
  */
 
-/* For the split Projects dropdown in the navbar */
+// For the split Projects dropdown in the navbar
 .navbar-nav > li.dropdown-split-right > a {
   padding-left: 3px;
 }
@@ -15,7 +15,14 @@
   padding-bottom: 10px;
 }
 
-/* For the <spoiler> on ritweek */
+// For the <spoiler> on ritweek
 .monospace {
     font-family: "Courier New", Courier, monospace;
+}
+
+// Project's page panels
+.panel-title-clickable {
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
 }
