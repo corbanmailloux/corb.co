@@ -10,9 +10,10 @@
     "build_systems":
     [
         {
-            "name": "Pleeease",
-            "cmd": ["pleeease.cmd", "compile"],
-            "working_dir": "$project_path"
+            "name": "jekyll",
+            "cmd": ["start", "bundle", "exec", "jekyll", "serve"],
+            "working_dir": "$project_path",
+            "shell": true
         }
     ]
 }
