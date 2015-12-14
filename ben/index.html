@@ -27,18 +27,12 @@ layout: ben
                 var map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
                 
-                // Shim for <=IE8
-                if (!Date.now) {
-                    Date.now = function() { return new Date().getTime(); }
-                }
-
                 var ctaLayer = new google.maps.KmlLayer({
                 	// Hide the popup windows
                 	clickable: false,
                 	// Set this layer on the map
                 	map: map,
-                    // Add the KML, and keep Google from caching it (REMOVED FOR NOW)
-                    //url: "http://corbco.pythonanywhere.com/kml/tracks.kml?" + (Date.now()).toString(),
+                    // Add the static KML
                     url: "http://corb.co/ben/tracks.kml",
                     // Don't re-center the map.
                     preserveViewport: true
