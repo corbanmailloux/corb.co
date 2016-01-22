@@ -71,3 +71,78 @@ appending to this document.
 View my publicly-auditable identity here: https://keybase.io/corbanmailloux
 
 ==================================================================
+
+==================================================================
+https://keybase.io/corbanmailloux
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://corb.co
+  * I am corbanmailloux (https://keybase.io/corbanmailloux) on keybase.
+  * I have a public key with fingerprint CA0D 8FC9 7FD6 B456 570B  2A71 E16F 7376 A681 1A50
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101a776786f38ada07c8692bef1a182391b370a12e9513542c1b4f01a592c90a1e80a",
+            "fingerprint": "ca0d8fc97fd6b456570b2a71e16f7376a6811a50",
+            "host": "keybase.io",
+            "key_id": "e16f7376a6811a50",
+            "kid": "0101a776786f38ada07c8692bef1a182391b370a12e9513542c1b4f01a592c90a1e80a",
+            "uid": "1e2316608a21e35dc26d1ed900005d00",
+            "username": "corbanmailloux"
+        },
+        "revoke": {
+            "sig_ids": [
+                "40ba8adad0c49a75a899a21d09a3dcd5936d076089a318adcf1a9773293aa1630f"
+            ]
+        },
+        "service": {
+            "hostname": "corb.co",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1453498402,
+    "expire_in": 157680000,
+    "prev": "533ba39673fdb05b3ff8ef01dafdf99993182aa864ae1adf10e16da3e04a7249",
+    "seqno": 21,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.49
+Comment: https://keybase.io/crypto
+
+yMJtAnicrVJbaBVHGD6niZrGu6liJVUZJC/GOJfdmZ1TieRBbLWoURQxxuPMzmyy
+5nj2uOfiJUgaTNTQCwWx2IeKRKO0lCraglLqjRiRgCKCD6KiWGINiRdEo4LB2dBC
+H3zsvAzzz/d9//d/M93ji2Kl8ddnD5afVOta4r0XXuRjazoPgWYgA7UdJJpBkx7Z
+dErpbC7Z5CuQABBBJBijzKEecYQSkLkO5VhqDwnkYMKRJAwKhDW3EbEt7CJpeYZk
+c+xyc6EdKEAl8Px0gw4zoZ/OGVlXQOV4LmeeotKyqc2gxIIhjajHCKOCOshIQENs
+DLIRw5iTIqur/MDUzCE5Yu89+P/Zd35EDmlMEKXQERhpYisXU4W04tAsW8Gobz6r
+w7TYrKPpglCK9Gbhp1JBfhvYWQlCXQiadJRu1m8w1rMgUQcsKEVkTUHX4oLZwuHc
+6CvIBVGusjmhCjLT1JyRAbrGOmeMYE6EQJRAD9QbbdO34Lsj4lFW//FQ5UZhZcIg
+F7hByhQbc7lMNhEZym3PRKitWib/4Seln1bmkQyjoMOsH6RBAhmkm/MjQWTZxOKO
+BXEl0NsyfqiTfoSwGXWiFKI+umAkbUKkIJwy4ikJbUk8z9EmWCU85XGzzCxYCIda
+QiOhPATNIypBNLQEwxYH0URb0gFIYGR8igajaUJLi1w+1GDnxfPri2Px0tjoUR9E
+vzdW+uGkf//0g49KYq139sYWrq0u+yO1//yyutN1C2pG9e2tKOrW3/585qeOssF1
+nV2JnsMvhqrD+nnhbxt63vxS8fbzTElv27FJH8+YdeTqLjquawj/3n8mceD0JzuS
+J6paS/pbBsZOuNc8faq9YtXkh19s+mvXvviCZXMvln1a3Hrz9nKMX3ZcmNM99vG5
+3tZbX8qB2q0z23b/GrbskxOfLu0bvFwyvHhh5tSi+TfiV2jv2o5Ve159c/T75M2h
+sv33+/csXrRy+PmrKUUT2o/Xll/f+NnLjavbx8wenh1/9ueaGdMmX9/xqL54qCas
+GXha0d4mLsmeu4/hD1/rU0umXl1ZeDL6b7vyu8Hyh03Xfgy+mrflwJJ89TtxuleA
+=IVIG
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/corbanmailloux
+
+==================================================================
