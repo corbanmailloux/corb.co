@@ -11,10 +11,10 @@ group:          arduino
 </div>
 
 <p>
-    RGBWeb is an evolution of <a href="/projects/rgbduino/" target="_blank">RGBDuino</a> that removes the Bluetooth requirement by using an internet connection. This does, however require a server to remain running with the Arduino attached. 
+    RGBWeb is an evolution of <a href="/projects/rgbduino/" target="_blank">RGBDuino</a> that removes the Bluetooth requirement by using an internet connection. This does, however require a server to remain running with the Arduino attached.
 </p>
 <p>
-    RGBWeb has also been built with many new features that RGBDuino never had. While many could be implemented on RGBDuino, I will probably not add the features. The code is all available on the project page for <a href="/projects/rgbduino/" target="_blank">RGBDuino</a>, and anyone is welcome to modify and add features. My only wish is that you give partial credit back to me, Corban Mailloux, if you make a new product with the code. I would also love to hear about developments people are making on my code, so please keep me updated at RGBDuino@corb.co. 
+    RGBWeb has also been built with many new features that RGBDuino never had. While many could be implemented on RGBDuino, I will probably not add the features. The code is all available on the project page for <a href="/projects/rgbduino/" target="_blank">RGBDuino</a>, and anyone is welcome to modify and add features. My only wish is that you give partial credit back to me, Corban Mailloux, if you make a new product with the code. I would also love to hear about developments people are making on my code, so please keep me updated at RGBDuino@corb.co.
 </p>
 <p>
     RGBWeb is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over the internet. The project consists of three main parts: the hardware side (Arduino), the server configuration, and the Android software.
@@ -28,7 +28,7 @@ group:          arduino
 
 <h2 id="hardware">Hardware (Arduino)</h2>
 <p>
-    The Arduino has very similar wiring to RGBDuino. The only difference is that RGBWeb does not have the Bluetooth module attached. See the <a href="/projects/rgbduino/" target="_blank">RGBDuino</a> project page for an image of the basic configuration. 
+    The Arduino has very similar wiring to RGBDuino. The only difference is that RGBWeb does not have the Bluetooth module attached. See the <a href="/projects/rgbduino/" target="_blank">RGBDuino</a> project page for an image of the basic configuration.
 </p>
 <p>
     Essentially, the Arduino receives commands over the USB (serial) connection. The power N-channel MOSFETS have their gate legs (left legs) connected to PWM pins 9, 10, and 11. Each gate leg is also connected through a resistor to GND. While there may be an optimal value for this resistor, I have found that this setup is not picky about resistance. The drain leg (middle leg) is connected to one of the negative returns from the LED strip. The source legs (right leg) are all connected to GND.
@@ -40,8 +40,8 @@ group:          arduino
     The parts I used were:
 </p>
 <ul>
-    <li>MOSFETS: <a href="http://www.sparkfun.com/products/10213" target="_blank">http://www.sparkfun.com/products/10213</a></li>
-    <li>Arduino: <a href="http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037" target="_blank">http://dx.com/p/nano-v3-0-avr-atmega328-p-20au-module-board-usb-cable-for-arduino-118037</a></li>
+    <li>MOSFETS: <a href="https://www.sparkfun.com/products/10213" target="_blank">"N-Channel MOSFET 60V 30A" from SparkFun</a></li>
+    <li>Arduino: <a href="https://www.arduino.cc/en/Main/ArduinoBoardNano" target="_blank">Arduino Nano (but any Arduino or clone should work)</a></li>
 </ul>
 
 <h2 id="server">Server Configuration</h2>
@@ -49,16 +49,16 @@ group:          arduino
     The server configuration was the part of this project that gave me the most trouble. At different times, I've had this project running on two different types of servers. It was running on an Apache server running on my main computer, but now it is running on a Windows Server 2012 Datacenter machine that is my general purpose server.
 </p>
 <p>
-    I discovered that the biggest problem was ensuring a basic server was established and that the server was properly configured to run PHP. 
+    I discovered that the biggest problem was ensuring a basic server was established and that the server was properly configured to run PHP.
 </p>
 <p>
     I chose to write the server web pages in PHP because I have used it before and because I know that it can handle serial communications from the server to a locally attached device (specifically, an Arduino). Reading from a serial port is not, at the time of writing, possible on Windows, but that's okay for our purposes. It would be nice for future updates to be able to get a response from the Arduino, though.
 </p>
 <p>
-    I made two separate web pages in PHP to interact with the Arduino. One is only there to allow quick lighting control from any internet connected device from inside a web browser. All that web page does is display a text box to allow input of a HEX value of a color to display. I also added a JavaScript element called <a href="http://jscolor.com/" target="_blank"> JSColor</a> to allow more elegant color choosing. It uses PHP GET requests to receive commands. I didn't want to use POST for this because I want to be able to simply enter a URL and have it change the lights without clicking or adjusting anything. 
+    I made two separate web pages in PHP to interact with the Arduino. One is only there to allow quick lighting control from any internet connected device from inside a web browser. All that web page does is display a text box to allow input of a HEX value of a color to display. I also added a JavaScript element called <a href="http://jscolor.com/" target="_blank"> JSColor</a> to allow more elegant color choosing. It uses PHP GET requests to receive commands. I didn't want to use POST for this because I want to be able to simply enter a URL and have it change the lights without clicking or adjusting anything.
 </p>
 <p>
-    Example: 
+    Example:
 </p>
 <div class="well well-sm">
     http://www.example.com/index.php?RGBColor=FFFFFF

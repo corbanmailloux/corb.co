@@ -23,23 +23,23 @@ layout: ben
                     zoom: 5,
                     mapTypeId: google.maps.MapTypeId.HYBRID
                 };
-                
+
                 var map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
-                
+
                 var ctaLayer = new google.maps.KmlLayer({
                 	// Hide the popup windows
                 	clickable: false,
                 	// Set this layer on the map
                 	map: map,
                     // Add the static KML
-                    url: "http://corb.co/ben/tracks.kml",
+                    url: "https://corb.co/ben/tracks.kml",
                     // Don't re-center the map.
                     preserveViewport: true
                 });
-                
+
             }
-    
+
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
     </head>
