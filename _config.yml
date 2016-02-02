@@ -1,6 +1,6 @@
 name: corbanmailloux
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 encoding: UTF-8
 permalink: pretty # to remove the ".html" extension when serving file
 
@@ -16,7 +16,7 @@ gems:
   - jekyll-sitemap
 
 # Limit what is hosted on the site.
-exclude: 
+exclude:
   - "runServer.bat"
   - "CNAME"
   - "corbanmailloux.github.io Project.sublime-project"
