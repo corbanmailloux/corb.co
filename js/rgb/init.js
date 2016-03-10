@@ -58,7 +58,7 @@ function sendColor(r,g,b) {
     }
 
     $.post("https://api.particle.io/v1/devices/26003a000d47343432313031/updateColor", {
-        "access_token": "975a602f9b66a493db67cbc3b7c2b4d371282bae",
+        "access_token": accessToken,
         "args": colorString
     });
 }
