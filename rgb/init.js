@@ -26,7 +26,6 @@ else {
     alert("LocalStorage is not available in this browser. This site will not function.");
 }
 
-
 $("#colorpicker").spectrum({
     flat: true,
     showInput: true,
