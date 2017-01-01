@@ -20,16 +20,15 @@ title: Projects
                 </h4>
             </div>
             <div id="{{ projectgroup.group | escape }}" class="panel-collapse collapse in">
-                <table class="table table-striped table-hover">
-                    <tbody>
-                        {% for project in site.projects %}{% if project.group == projectgroup.group %}
-                        <tr>
-                            <td class="col-md-3"><a href="{{ project.url }}">{{ project.title }}</a></td>
-                            <td class="col-md-9">{{ project.subtitle }}</td>
-                        </tr>
-                        {% endif %}{% endfor %}
-                    </tbody>   
-                </table>
+
+                <div class="list-group">
+                    {% for project in site.projects %}{% if project.group == projectgroup.group %}
+                    <a href="{{ project.url }}" class="list-group-item">
+                        <h4 class="list-group-item-heading">{{ project.title }}</h4>
+                        <p class="list-group-item-text">{{ project.subtitle }}</p>
+                    </a>
+                    {% endif %}{% endfor %}
+                </div>
             </div>
         </div><!-- /{{ projectgroup.title }} -->
         {% endfor %}
