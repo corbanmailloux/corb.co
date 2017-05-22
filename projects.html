@@ -9,7 +9,7 @@ title: Projects
             <h4>Just some of my projects. Most (and more) available on my <a href="https://github.com/corbanmailloux/" target="_blank"><i class="fa fa-github"></i> GitHub</a>.</h4>
         </div>
 
-        {% assign projectgroups = site.projectgroups | sort: "weight" %}
+        <!--{% assign projectgroups = site.projectgroups | sort: "weight" %}
         {% for projectgroup in projectgroups reversed %}
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -30,25 +30,33 @@ title: Projects
                     {% endif %}{% endfor %}
                 </div>
             </div>
-        </div><!-- /{{ projectgroup.title }} -->
-        {% endfor %}
+        </div>
+        {% endfor %}-->
 
         <div class="list-group">
             {% assign projects = site.projects | sort: 'date' %}
             {% for project in projects reversed %}
-            <a href="{{ project.url }}" class="list-group-item clearfix">
-                <span>
-                    <h4 class="list-group-item-heading">
+            <a href="{{ project.url }}" class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h4 class="list-group-item-heading">
                         {{ project.title }}
-                        <span class="pull-right"><small>{{ project.date | date: "%B %e, %Y" }}</small></span>
-                    </h4>
-                    <span class="pull-right">
+                        </h4>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="pull-right text-nowrap"><small>{{ project.date | date: "%b %e, %Y" }}</small></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-7 margin-bottom-col">
+                        <p class="list-group-item-text">{{ project.subtitle }}</p>
+                    </div>
+                    <div class="col-sm-5">
                         {% for tag in project.tags %}
-                        <span class="label label-default">{{ tag }}</span>
+                        <div class="label label-default pull-right project-tag-label">{{ tag }}</div>
                         {% endfor %}
-                    </span>
-                </span>
-                <p class="list-group-item-text">{{ project.subtitle }}</p>
+                    </div>
+                </div>
             </a>
             {% endfor %}
         </div>
