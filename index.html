@@ -45,14 +45,5 @@ title: Welcome!
         <p>
             I can be contacted by using any of those pretty buttons at the top of the page.
         </p>
-<!--STOP HERE-->
-        <br>
-
-        <ul>
-        {% assign projects = site.projects | sort: 'date' %}
-        {% for project in projects reversed %}
-            <li>{{ project.date | date: "%B %e, %Y" }} - <a href="{{ project.url }}">{{ project.title }}</a>: {{ project.subtitle }} - Tags: {{ project.tags | join: ', ' }}</li>
-        {% endfor %}
-        </ul>
     </div>
 </div>
