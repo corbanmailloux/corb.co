@@ -32,5 +32,40 @@ title: Projects
             </div>
         </div><!-- /{{ projectgroup.title }} -->
         {% endfor %}
+
+        <div class="list-group">
+            {% assign projects = site.projects | sort: 'date' %}
+            {% for project in projects reversed %}
+            <a href="{{ project.url }}" class="list-group-item clearfix">
+                <span>
+                    <h4 class="list-group-item-heading">
+                        {{ project.title }}
+                        <span class="pull-right"><small>{{ project.date | date: "%B %e, %Y" }}</small></span>
+                    </h4>
+                    <span class="pull-right">
+                        {% for tag in project.tags %}
+                        <span class="label label-default">{{ tag }}</span>
+                        {% endfor %}
+                    </span>
+                </span>
+                <p class="list-group-item-text">{{ project.subtitle }}</p>
+            </a>
+            {% endfor %}
+        </div>
+<!--
+
+<div class="list-group">
+  <a href="#" class="list-group-item clearfix">
+    <span class="glyphicon glyphicon-file"></span>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    <span class="pull-right">
+      <button class="btn btn-xs btn-info">CCS</button>
+      <button class="btn btn-xs btn-warning">
+        <span class="glyphicon glyphicon-trash"></span>
+      </button>
+    </span>
+  </a>
+</div>-->
+
     </div>
 </div>
