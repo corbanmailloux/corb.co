@@ -68,14 +68,9 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                             </a>
                             <ul class="dropdown-menu">
-                                {% assign projectgroups = site.projectgroups | sort: "weight" %}
-                                {% for projectgroup in projectgroups reversed %}
-                                    {% unless forloop.first %}<li class="divider"></li>{% endunless %}
-                                    {% for project in site.projects %}{% if project.group == projectgroup.group %}
-                                    <li>
-                                        <a href="{{ project.url }}">{{ project.title }}</a>
-                                    </li>
-                                    {% endif %}{% endfor %}
+                                {% assign projects = site.projects | sort: 'date' %}
+                                {% for project in projects reversed %}
+                                    <li><a href="{{ project.url }}">{{ project.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>

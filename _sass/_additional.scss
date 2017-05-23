@@ -20,9 +20,13 @@
     font-family: "Courier New", Courier, monospace;
 }
 
-// Project's page panels
-.panel-title-clickable {
-    display: block;
-    padding: 10px 15px;
-    margin: -10px -15px;
+.project-tag-label {
+  margin: 0.1em 0.1em;
+}
+
+// Used to give the tags space when on small devices
+@media (max-width: 767px) {
+    .margin-bottom-col-xs {
+        margin-bottom: 0.5rem;
+    }
 }
