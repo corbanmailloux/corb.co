@@ -35,7 +35,7 @@ custom_js:
                 <form class="form-inline" id="filter-form">
                     {% for tag in all_tags %}
                         <div class="col-sm-3">
-                            <div class="checkbox">
+                            <div class="checkbox-inline">
                                 <label>
                                     <input name="{{ tag | url_encode }}" type="checkbox" checked> {{ tag }}
                                 </label>
