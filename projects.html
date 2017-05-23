@@ -1,5 +1,8 @@
 ---
 title: Projects
+
+custom_js:
+  - projects.js
 ---
 
 <div class="row">
@@ -8,35 +11,56 @@ title: Projects
             <h1>{{ page.title }}</h1>
             <h4>Just some of my projects. Most (and more) available on my <a href="https://github.com/corbanmailloux/" target="_blank"><i class="fa fa-github"></i> GitHub</a>.</h4>
         </div>
+    </div>
+</div>
 
-        <!--{% assign projectgroups = site.projectgroups | sort: "weight" %}
-        {% for projectgroup in projectgroups reversed %}
+<div class="row">
+    <div class="col-xs-12">
+        <p>
+            Select tags below to filter the list of projects.
+        </p>
+        {% assign all_tags = "" %}
+        {% for project in site.projects %}
+            {% assign proj_tags = project.tags | join: '|' | append: '|' %}
+            {% assign all_tags = all_tags | append: proj_tags %}
+        {% endfor %}
+        {% assign all_tags = all_tags | split: '|' | sort | uniq %}
+
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="panel-title-clickable" data-toggle="collapse" data-parent="#projects" href="#{{ projectgroup.group | escape }}">
-                        {{ projectgroup.title }}
-                    </a>
-                </h4>
+                 <span class="pull-right"><a href="#" id="select-all">(Select All)</a>  <a href="#" id="select-none">(Select None)</a></span>
+                <h3 class="panel-title">Tags to Include</h3>
             </div>
-            <div id="{{ projectgroup.group | escape }}" class="panel-collapse collapse in">
-
-                <div class="list-group">
-                    {% for project in site.projects %}{% if project.group == projectgroup.group %}
-                    <a href="{{ project.url }}" class="list-group-item">
-                        <h4 class="list-group-item-heading">{{ project.title }}</h4>
-                        <p class="list-group-item-text">{{ project.subtitle }}</p>
-                    </a>
-                    {% endif %}{% endfor %}
-                </div>
+            <div class="panel-body">
+                <form class="form-inline" id="filter-form">
+                    {% for tag in all_tags %}
+                        <div class="col-sm-3">
+                            <div class="checkbox">
+                                <label>
+                                    <input name="{{ tag | url_encode }}" type="checkbox" checked> {{ tag }}
+                                </label>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </form>
             </div>
         </div>
-        {% endfor %}-->
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-xs-12">
         <div class="list-group">
             {% assign projects = site.projects | sort: 'date' %}
             {% for project in projects reversed %}
-            <a href="{{ project.url }}" class="list-group-item">
+
+            {% assign tag_data = "" %}
+            {% for tag in project.tags %}
+                {% assign url_tag = tag | url_encode | append: '|' %}
+                {% assign tag_data = tag_data | append: url_tag %}
+            {% endfor %}
+            
+            <a href="{{ project.url }}" class="list-group-item project" data-tags="{{ tag_data }}">
                 <div class="row">
                     <div class="col-xs-8">
                         <h4 class="list-group-item-heading">

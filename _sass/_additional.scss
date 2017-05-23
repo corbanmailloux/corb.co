@@ -24,8 +24,9 @@
   margin: 0.1em 0.1em;
 }
 
+// Used to give the tags space when on small devices
 @media (max-width: 767px) {
-    .margin-bottom-col {
+    .margin-bottom-col-xs {
         margin-bottom: 0.5rem;
     }
 }
