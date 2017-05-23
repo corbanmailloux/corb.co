@@ -10,8 +10,7 @@
 
         <title>{{ page.title }} · {{ site.title}}</title>
 
-        <!-- Bootstrap theme Simplex, from https://bootswatch.com/simplex/ -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-C0X5qw1DlkeV0RDunhmi4cUBUkPDTvUqzElcNWm1NI2T4k8tKMZ+wRPQOhZfSJ9N" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
         <!-- Font Awesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -42,40 +41,36 @@
     </head>
 
     <body>
-        <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
             <div class="container">
-                <div class="navbar-header">
-                    <!-- Create the hamburger icon expand button for lower resolutions. -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/" title="Home">
-                        <span><img src="/images/logo.min.svg" alt="logo" height="20" width="20" /></span>
-                        corb.co
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown-split-left">
-                            <a href="/projects/">Projects</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="/" title="Home">
+                    <span><img src="/images/logo.min.svg" alt="logo" height="20" width="20" /></span>
+                    corb.co
+                </a>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown-split-left">
+                            <a class="nav-link" href="/projects/">Projects</a>
                         </li>
-                        <li class="dropdown dropdown-split-right hidden-xs">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <li class="nav-item dropdown dropdown-split-right hidden-xs">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="caret"></span>
                                 <span class="sr-only">Toggle Dropdown</span>
                             </a>
                             <ul class="dropdown-menu">
                                 {% assign projects = site.projects | sort: 'date' %}
                                 {% for project in projects reversed %}
-                                    <li><a href="{{ project.url }}">{{ project.title }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ project.url }}">{{ project.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
                     </ul>
-                </div><!--/.nav-collapse -->
+                </div>
             </div>
-        </div>
+        </nav>
+
         <div class="container">
