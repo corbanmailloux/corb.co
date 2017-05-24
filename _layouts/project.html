@@ -5,7 +5,7 @@
         <small class="text-nowrap">{{ page.date | date: "%b %e, %Y" }}</small>
     </div>
     <div class="d-flex flex-sm-row flex-column w-100 justify-content-end">
-        <h5 class="font-weight-normal mr-auto mb-1">{{ page.subtitle }}</h5>
+        <p class="lead mr-auto mb-0">{{ page.subtitle }}</p>
         <div class="d-flex flex-row justify-content-end">
             {% for tag in page.tags %}
             <div class="badge badge-default ml-1 py-1 align-self-end">{{ tag }}</div>
