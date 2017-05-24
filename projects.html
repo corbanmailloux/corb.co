@@ -6,16 +6,16 @@ custom_js:
 ---
 
 <div class="row">
-    <div class="col-xs-12">
-        <div class="page-header">
-            <h1>{{ page.title }}</h1>
-            <h4>Just some of my projects. Most (and more) available on my <a href="https://github.com/corbanmailloux/" target="_blank"><i class="fa fa-github"></i> GitHub</a>.</h4>
+    <div class="col">
+        <div class="pb-1 mt-4 mb-3 bottom-border">
+            <h1 class="font-weight-normal">{{ page.title }}</h1>
+            <h4 class="font-weight-normal">Just some of my projects. Most (and more) available on my <a href="https://github.com/corbanmailloux/" target="_blank"><i class="fa fa-github"></i> GitHub</a>.</h4>
         </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col">
         <p>
             Select tags below to filter the list of projects.
         </p>
@@ -26,22 +26,28 @@ custom_js:
         {% endfor %}
         {% assign all_tags = all_tags | split: '|' | sort | uniq %}
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                 <span class="pull-right"><a href="#" id="select-all">(Select All)</a>  <a href="#" id="select-none">(Select None)</a></span>
-                <h3 class="panel-title">Tags to Include</h3>
+        <div class="card">
+            <div class="card-header d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-end">
+                <h4 class="mr-auto">Tags to Include</h4>
+                <span>
+                    <a class="mr-1" href="#" id="select-all">(Select All)</a>
+                    <a href="#" id="select-none">(Select None)</a>
+                </span>
             </div>
-            <div class="panel-body">
-                <form class="form-inline" id="filter-form">
+            <div class="card-block">
+                <form id="filter-form">
+                    <div class="row">
                     {% for tag in all_tags %}
-                        <div class="col-xs-6 col-sm-2">
-                            <div class="checkbox-inline">
-                                <label>
-                                    <input name="{{ tag | url_encode }}" type="checkbox" checked> {{ tag }}
+                        <div class="col-12 col-sm-6 col-md-3 col-xl-2">
+                            <div class="form-check form-check-inline text-nowrap">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" name="{{ tag | url_encode }}" checked>
+                                    {{ tag }}
                                 </label>
                             </div>
                         </div>
                     {% endfor %}
+                    </div>
                 </form>
             </div>
         </div>
@@ -49,40 +55,30 @@ custom_js:
 </div>
 
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col">
         <div class="list-group">
-            {% assign projects = site.projects | sort: 'date' %}
-            {% for project in projects reversed %}
-
+        {% assign projects = site.projects | sort: 'date' %}
+        {% for project in projects reversed %}
             {% assign tag_data = "" %}
             {% for tag in project.tags %}
                 {% assign url_tag = tag | url_encode | append: '|' %}
                 {% assign tag_data = tag_data | append: url_tag %}
             {% endfor %}
-            
-            <a href="{{ project.url }}" class="list-group-item project" data-tags="{{ tag_data }}">
-                <div class="row">
-                    <div class="col-xs-8">
-                        <h4 class="list-group-item-heading">
-                        {{ project.title }}
-                        </h4>
-                    </div>
-                    <div class="col-xs-4">
-                        <span class="pull-right text-nowrap"><small>{{ project.date | date: "%b %e, %Y" }}</small></span>
-                    </div>
+            <a href="{{ project.url }}" class="list-group-item list-group-item-action d-flex flex-column align-items-start project" data-tags="{{ tag_data }}">
+                <div class="d-flex w-100 justify-content-end">
+                    <h5 class="mr-auto mb-1">{{ project.title }}</h5>
+                    <small class="text-nowrap">{{ project.date | date: "%b %e, %Y" }}</small>
                 </div>
-                <div class="row">
-                    <div class="col-sm-7 margin-bottom-col">
-                        <p class="list-group-item-text">{{ project.subtitle }}</p>
-                    </div>
-                    <div class="col-sm-5">
-                        {% for tag in project.tags %}
-                        <div class="label label-default pull-right project-tag-label">{{ tag }}</div>
-                        {% endfor %}
+                <div class="d-flex flex-sm-row flex-column w-100 justify-content-end">
+                    <p class="mr-auto mb-1">{{ project.subtitle }}</p>
+                    <div class="d-flex flex-row justify-content-end">
+                    {% for tag in project.tags %}
+                        <div class="badge badge-default ml-1 py-1 align-self-end">{{ tag }}</div>
+                    {% endfor %}
                     </div>
                 </div>
             </a>
-            {% endfor %}
+        {% endfor %}
         </div>
     </div>
 </div>

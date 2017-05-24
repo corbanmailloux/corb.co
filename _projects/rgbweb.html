@@ -60,11 +60,15 @@ tags:
 <p>
     I made two separate web pages in PHP to interact with the Arduino. One is only there to allow quick lighting control from any internet connected device from inside a web browser. All that web page does is display a text box to allow input of a HEX value of a color to display. I also added a JavaScript element called <a href="http://jscolor.com/" target="_blank"> JSColor</a> to allow more elegant color choosing. It uses PHP GET requests to receive commands. I didn't want to use POST for this because I want to be able to simply enter a URL and have it change the lights without clicking or adjusting anything.
 </p>
-<p>
-    Example:
-</p>
-<div class="well well-sm">
-    http://www.example.com/index.php?RGBColor=FFFFFF
+<div class="card bg-faded mb-2">
+    <div class="card-header">
+        Example
+    </div>
+    <div class="card-block">
+        <code>
+            http://www.example.com/index.php?RGBColor=FFFFFF
+        </code>
+    </div>
 </div>
 <p>
     This would set the lights on to white at full brightness.

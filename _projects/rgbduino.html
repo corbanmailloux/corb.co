@@ -36,8 +36,7 @@ tags:
 <p>
     For the hardware end of things, I used a breadboard-able version of an Arduino. Any Arduino or Arduino clone should work.
 </p>
-<img src="/images/projects/rgbduino/RGBDuino_bb.png" alt="Breadboard layout" class="img-responsive">
-<br>
+<img src="/images/projects/rgbduino/RGBDuino_bb.png" alt="Breadboard layout" class="img-fluid">
 <p>
     Essentially, the Arduino receives bytes from the Serial Module through digital pin 2 and sends data through digital pin 3. The power N-channel MOSFETS have their gate legs (left legs) connected to PWM pins 9, 10, and 11. Each gate leg is also connected through a resistor to GND. The drain leg (middle leg) is connected to one of the negative returns from the LED strip. The source legs (right leg) are all connected to GND.
 </p>

@@ -5,7 +5,8 @@ function filter() {
 
     var all_projects = $(".project");
 
-    all_projects.hide();
+    // all_projects.hide();
+    all_projects.addClass("hidden-xs-up");
 
     all_projects.filter(function() {
         var projectTags = $(this).attr('data-tags').split("|"); // Get the project's tags
@@ -14,7 +15,7 @@ function filter() {
         return projectTags.some(function(value) {
             return tagsToInclude.indexOf(value) >= 0;
         });
-    }).show();
+    }).removeClass("hidden-xs-up");
 }
 
 $(document).ready(function () {
