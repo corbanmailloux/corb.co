@@ -27,7 +27,7 @@ custom_js:
         {% assign all_tags = all_tags | split: '|' | sort | uniq %}
 
         <div class="card">
-            <div class="card-header d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-end">
+            <div class="card-header d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between">
                 <h4 class="mr-auto">Tags to Include</h4>
                 <span>
                     <a class="mr-1" href="#" id="select-all">(Select All)</a>
@@ -65,11 +65,11 @@ custom_js:
                 {% assign tag_data = tag_data | append: url_tag %}
             {% endfor %}
             <a href="{{ project.url }}" class="list-group-item list-group-item-action d-flex flex-column align-items-start project" data-tags="{{ tag_data }}">
-                <div class="d-flex w-100 justify-content-end">
+                <div class="d-flex w-100 justify-content-between">
                     <h5 class="mr-auto mb-1">{{ project.title }}</h5>
                     <small class="text-nowrap">{{ project.date | date: "%b %e, %Y" }}</small>
                 </div>
-                <div class="d-flex flex-sm-row flex-column w-100 justify-content-end">
+                <div class="d-flex flex-sm-row flex-column w-100 justify-content-between">
                     <p class="mr-auto mb-1">{{ project.subtitle }}</p>
                     <div class="d-flex flex-row justify-content-end">
                     {% for tag in project.tags %}
