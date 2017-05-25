@@ -6,67 +6,72 @@ tags:
   - Microcontroller
   - Home Automation
 ---
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <p class="mb-3">
+                I redid this project to use a web server running on a PC connected to the Arduino via serial (USB). This allows the Android app to operate without the need for Bluetooth. The app simply sends a request to a PHP website on the server. The server then sends information along to the Arduino. The Arduino is responsible for interpreting this information and dealing with it, controlling the LEDs.
+            </p>
+            <p class="mb-0">
+                The new(er) project, called RGBWeb, is available <a href="/projects/rgbweb/" target="_blank">here</a>.
+            </p>
+        </div>
 
-<div class="alert alert-info">
-    <p>
-        I redid this project to use a web server running on a PC connected to the Arduino via serial (USB). This allows the Android app to operate without the need for Bluetooth. The app simply sends a request to a PHP website on the server. The server then sends information along to the Arduino. The Arduino is responsible for interpreting this information and dealing with it, controlling the LEDs.
-    </p>
-    <p>
-        The new(er) project, called RGBWeb, is available <a href="/projects/rgbweb/" target="_blank">here</a>.
-    </p>
+        <div class="alert alert-warning">
+            This is not a maintained project. This project page is only hosted for historical purposes.
+        </div>
+    </div>
 </div>
 
-<div class="alert alert-warning">
-    <p>
-        This is not a maintained project. This project page is only hosted for historical purposes.
-    </p>
+<div class="row">
+    <div class="col-12">
+        <p>
+            RGBDuino is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over Bluetooth. The project consists of two main parts: the hardware side and the software side.
+        </p>
+
+        <h2 id="video">Video</h2>
+        <p>
+            First, a demonstration:
+        </p>
+        <div class="embed-responsive embed-responsive-4by3 d-block mx-auto mb-3">
+            <iframe src="https://www.youtube-nocookie.com/embed/wHQVE32OFiM" allowfullscreen></iframe>
+        </div>
+
+        <h2 id="hardware">Hardware</h2>
+        <p>
+            For the hardware end of things, I used a breadboard-able version of an Arduino. Any Arduino or Arduino clone should work.
+        </p>
+        <img src="/images/projects/rgbduino/RGBDuino_bb.png" alt="Breadboard layout" class="img-fluid d-block mx-auto mb-3">
+        <p>
+            Essentially, the Arduino receives bytes from the Serial Module through digital pin 2 and sends data through digital pin 3. The power N-channel MOSFETS have their gate legs (left legs) connected to PWM pins 9, 10, and 11. Each gate leg is also connected through a resistor to GND. The drain leg (middle leg) is connected to one of the negative returns from the LED strip. The source legs (right leg) are all connected to GND.
+        </p>
+        <p>
+            The 12 volt power source connects to GND and the common anode on the LED strip.
+        </p>
+
+        <p>
+            The parts I used were:
+        </p>
+        <ul>
+            <li>MOSFETS: <a href="https://www.sparkfun.com/products/10213" target="_blank">"N-Channel MOSFET 60V 30A" from SparkFun</a></li>
+            <li>Bluetooth Module: <a href="http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299" target="_blank">"JY-MCU Bluetooth Wireless Serial Port Module for Arduino" from DX</a></li>
+            <li>Arduino: <a href="https://www.arduino.cc/en/Main/ArduinoBoardNano" target="_blank">Arduino Nano (but any Arduino or clone should work)</a></li>
+        </ul>
+
+        <h2 id="software">Software</h2>
+        <p>
+            The Android app was written using MIT's App Inventor. The project source and a compiled APK version of the app are available on <a href="https://github.com/corbanmailloux/RGBDuino" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
+        </p>
+        {% include GitHubCard.html repo="corbanmailloux/RGBDuino" %}
+        <p>
+            The Arduino side of the project uses the SoftwareSerial Library to listen to the Bluetooth module. This could be done with the built in Serial pins, but that would make it difficult to upload new code while testing. The Arduino code is available on <a href="https://github.com/corbanmailloux/RGBDuino/blob/master/Arduino/RGBDuino.ino" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
+        </p>
+        <p>
+            Any questions can be directed at RGBDuino@corb.co.
+        </p>
+        <h2 id="related">Related Projects</h2>
+        <p>
+            Monica Houston built a new project using some elements of this project. You can check it out at <a href="https://www.hackster.io/monica/rgb-leds-controlled-from-android-app-5ffe2e">Hackster.io</a>.
+        </p>
+    </div>
 </div>
-
-<p>
-    RGBDuino is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over Bluetooth. The project consists of two main parts: the hardware side and the software side.
-</p>
-
-<h2 id="video">Video</h2>
-<p>
-    First, a demonstration:
-</p>
-<div class="embed-responsive embed-responsive-4by3 d-block mx-auto mb-3">
-    <iframe src="https://www.youtube-nocookie.com/embed/wHQVE32OFiM" allowfullscreen></iframe>
-</div>
-
-<h2 id="hardware">Hardware</h2>
-<p>
-    For the hardware end of things, I used a breadboard-able version of an Arduino. Any Arduino or Arduino clone should work.
-</p>
-<img src="/images/projects/rgbduino/RGBDuino_bb.png" alt="Breadboard layout" class="img-fluid d-block mx-auto mb-3">
-<p>
-    Essentially, the Arduino receives bytes from the Serial Module through digital pin 2 and sends data through digital pin 3. The power N-channel MOSFETS have their gate legs (left legs) connected to PWM pins 9, 10, and 11. Each gate leg is also connected through a resistor to GND. The drain leg (middle leg) is connected to one of the negative returns from the LED strip. The source legs (right leg) are all connected to GND.
-</p>
-<p>
-    The 12 volt power source connects to GND and the common anode on the LED strip.
-</p>
-
-<p>
-    The parts I used were:
-</p>
-<ul>
-    <li>MOSFETS: <a href="https://www.sparkfun.com/products/10213" target="_blank">"N-Channel MOSFET 60V 30A" from SparkFun</a></li>
-    <li>Bluetooth Module: <a href="http://dx.com/p/jy-mcu-arduino-bluetooth-wireless-serial-port-module-104299" target="_blank">"JY-MCU Bluetooth Wireless Serial Port Module for Arduino" from DX</a></li>
-    <li>Arduino: <a href="https://www.arduino.cc/en/Main/ArduinoBoardNano" target="_blank">Arduino Nano (but any Arduino or clone should work)</a></li>
-</ul>
-
-<h2 id="software">Software</h2>
-<p>
-    The Android app was written using MIT's App Inventor. The project source and a compiled APK version of the app are available on <a href="https://github.com/corbanmailloux/RGBDuino" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
-</p>
-{% include GitHubCard.html repo="corbanmailloux/RGBDuino" %}
-<p>
-    The Arduino side of the project uses the SoftwareSerial Library to listen to the Bluetooth module. This could be done with the built in Serial pins, but that would make it difficult to upload new code while testing. The Arduino code is available on <a href="https://github.com/corbanmailloux/RGBDuino/blob/master/Arduino/RGBDuino.ino" target="_blank"><i class="fa fa-github"></i> GitHub</a>.
-</p>
-<p>
-    Any questions can be directed at RGBDuino@corb.co.
-</p>
-<h2 id="related">Related Projects</h2>
-<p>
-    Monica Houston built a new project using some elements of this project. You can check it out at <a href="https://www.hackster.io/monica/rgb-leds-controlled-from-android-app-5ffe2e">Hackster.io</a>.
-</p>
