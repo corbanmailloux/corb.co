@@ -41,7 +41,7 @@ custom_js:
                         <div class="col-12 col-sm-6 col-md-3 col-xl-2">
                             <div class="form-check form-check-inline text-nowrap">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="{{ tag | url_encode }}" checked>
+                                    <input type="checkbox" class="form-check-input project-filter-checkbox" name="{{ tag | url_encode }}" checked>
                                     {{ tag }}
                                 </label>
                             </div>
@@ -79,6 +79,10 @@ custom_js:
                 </div>
             </a>
         {% endfor %}
+            <div class="list-group-item d-flex flex-column align-items-start hidden-xs-up bg-warning" id="no-visible-projects">
+                <h5 class="w-100 mr-auto mb-1">No projects match the chosen filters</h5>
+                <p class="mr-auto mb-1">Try changing the filters above.</p>
+            </div>
         </div>
     </div>
 </div>
