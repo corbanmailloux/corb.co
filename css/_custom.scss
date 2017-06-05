@@ -1,0 +1,17 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+$corbco-orange:             #DA742A;
+$corbco-blue:               #003265;
+
+$brand-primary:             $corbco-orange;
+$brand-success:             $corbco-blue;
+$brand-info:                #229210;
+$brand-warning:             $orange;
+$brand-danger:              #92140C;
+$brand-inverse:             $gray-dark;
+
+
+$link-color:                $brand-primary;

@@ -2,6 +2,23 @@
  * Insert any additional CSS/SCSS here.
  */
 
+// Removed in Bootstrap v4
+.btn-group-justified {
+  display: flex;
+  width: 100%;
+  .btn,
+  .btn-group {
+    flex: 1;
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+.bottom-border {
+  border-bottom: 1px solid #dddddd;
+}
+
 // For the split Projects dropdown in the navbar
 .navbar-nav > li.dropdown-split-right > a {
   padding-left: 3px;
@@ -9,24 +26,4 @@
 
 .navbar-nav > li.dropdown-split-left > a {
   padding-right: 3px;
-}
-
-.btn-group-social {
-  padding-bottom: 10px;
-}
-
-// For the <spoiler> on ritweek
-.monospace {
-    font-family: "Courier New", Courier, monospace;
-}
-
-.project-tag-label {
-  margin: 0.1em 0.1em;
-}
-
-// Used to give the tags space when on small devices
-@media (max-width: 767px) {
-    .margin-bottom-col-xs {
-        margin-bottom: 0.5rem;
-    }
 }
