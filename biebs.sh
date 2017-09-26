@@ -1,15 +1,12 @@
 #!/bin/bash
-
-script='set weblink to "http://i.imgur.com/HsSilpd.jpg"
-set temp_file to "/tmp/bieber.jpg"
-set curl_command to "curl " & weblink & " -o " & temp_file
+echo 'set link to "http://i.imgur.com/HsSilpd.jpg"
+set file_path to "/tmp/bieber.jpg"
+set curl_command to "curl " & link & " -o " & file_path
 do shell script curl_command
 
-set theFile to POSIX file temp_file
+set img_file to POSIX file file_path
 tell application "System Events"
 	tell every desktop
-		set picture to theFile
+		set picture to img_file
 	end tell
-end tell'
-
-echo "$script" | osascript
+end tell' | osascript
