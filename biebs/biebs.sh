@@ -12,7 +12,7 @@
 # Alternatively, you can choose just one option by changing the URL:
 # To ONLY change the wallpaper, use one of the following:
 # curl -L wallpaper.cht.fun | bash
-# curl -L w.fun | bash
+# curl -L w.cht.fun | bash
 
 # To only post to Slack, use one of the following:
 # - curl -L slack.cht.fun | bash
@@ -20,7 +20,7 @@
 
 # Note that all of these usages require running untrusted code on the target machine.
 # I take no responsibility for your actions, any violations
-# of corporate policy, or any other harm caused by these scripts. 
+# of corporate policy, or any other harm caused by these scripts.
 # Some people find it funny. Others... Not so much. Good luck.
 
 # Wallpaper
