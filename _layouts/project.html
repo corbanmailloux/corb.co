@@ -1,4 +1,17 @@
 {% include head.html %}
+{% capture structured_data %}
+  {
+    "@context" : "http://schema.org",
+    "@type" : "Article",
+    "name" : "{{ page.title }}",
+    "author" : {
+      "@type" : "Person",
+      "name" : "Corban Mailloux"
+    },
+    "datePublished" : "{{ page.date | date: "%Y-%m-%d" }}"
+    {% if page.image %}, "image" : "{{ page.image }}"{% endif %}
+  }
+{% endcapture %}
 <div class="d-flex flex-column align-items-start pb-1 mt-4 mb-3 bottom-border">
     <div class="d-flex w-100 justify-content-between">
         <h1 class="font-weight-normal mr-auto mb-3">{{ page.title }}</h1>
