@@ -9,7 +9,7 @@
       "name" : "Corban Mailloux"
     },
     "datePublished" : "{{ page.date | date: "%Y-%m-%d" }}"
-    {% if page.image %}, "image" : "{{ page.image }}"{% endif %}
+    {%- if page.image %}, "image" : "{{ site.url }}{{ page.image.url }}"{% endif %}
   }
 </script>
 <div class="d-flex flex-column align-items-start pb-1 mt-4 mb-3 bottom-border">
