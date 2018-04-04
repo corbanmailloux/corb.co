@@ -12,7 +12,7 @@ description: "A personal and projects webpage for Corban Mailloux."
 owner:
     full-name: "Corban Mailloux"
 
-gems:
+plugins:
   - jekyll-sitemap
 
 # Limit what is hosted on the site.
