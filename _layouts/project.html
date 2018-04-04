@@ -9,9 +9,10 @@
       "name" : "Corban Mailloux"
     },
     "datePublished" : "{{ page.date | date: "%Y-%m-%d" }}"
-    {%- if page.image %}, "image" : "{{ site.url }}{{ page.image.url }}"{% endif %}
+    {%- if page.image.url %}, "image" : "{{ site.url }}{{ page.image.url }}"{% endif %}
   }
 </script>
+<!-- {{page.image}} -->
 <div class="d-flex flex-column align-items-start pb-1 mt-4 mb-3 bottom-border">
     <div class="d-flex w-100 justify-content-between">
         <h1 class="font-weight-normal mr-auto mb-3">{{ page.title }}</h1>
