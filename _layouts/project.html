@@ -20,8 +20,13 @@
       "width": 60
     }
   },
-  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}"
-  {% if page.image %}, "image": "{{ site.url }}{{ page.image.url }}"{% endif %}
+  "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "image":
+    {% if page.image %}
+      "{{ site.url }}{{ page.image.url }}"
+    {% else %}
+      "{{ site.url }}/images/logo/logo-60.gif"
+    {% endif %}
 }
 </script>
 <script type="application/ld+json">
