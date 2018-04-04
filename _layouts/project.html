@@ -21,6 +21,12 @@
     }
   },
   "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+  "dateModified":
+    {% if page.date_modified %}
+      "{{ page.date_modified | date: '%Y-%m-%d' }}"
+    {% else %}
+      "{{ page.date | date: '%Y-%m-%d' }}"
+    {% endif %},
   "image":
     {% if page.image %}
       "{{ site.url }}{{ page.image.url }}"
