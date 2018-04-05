@@ -1,6 +1,6 @@
 {% include head.html %}
 {% comment %}"Article" required an image, so skip it for projects without one.{% endcomment %}
-{% if page.image %}
+{% comment %}{% if page.image %}
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -33,6 +33,7 @@
   }
   </script>
 {% endif %}
+{% endcomment %}
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
