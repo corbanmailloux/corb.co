@@ -7,7 +7,7 @@
 # Usage:
 # There are a few modes. The default mode:
 # curl -L cht.fun | bash
-# BOTH changes the wallpaper to a wonderful image AND post to Slack.
+# BOTH changes the wallpaper to a wonderful image AND posts to Slack.
 
 # Alternatively, you can choose just one option by changing the URL:
 # To ONLY change the wallpaper, use one of the following:
