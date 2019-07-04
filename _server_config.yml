@@ -22,6 +22,9 @@ exclude:
   - "Gemfile.lock"
   - "README.md"
 
+include:
+  - ".well-known"
+
 collections:
   projects:
     output: true
