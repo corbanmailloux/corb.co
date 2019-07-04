@@ -4,9 +4,12 @@
 _site/
 .sass-cache/
 .jekyll-metadata
+.jekyll-cache/
 
 # Windows
 Thumbs.db
 
 # Ruby
 Gemfile.lock
+.ruby-version
+.ruby-gemset
