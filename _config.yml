@@ -2,7 +2,7 @@ name: corbanmailloux
 markdown: redcarpet
 highlighter: rouge
 encoding: UTF-8
-permalink: pretty # to remove the ".html" extension when serving file
+# permalink: pretty # to remove the ".html" extension when serving file
 
 url: https://corb.co
 title: Corban Mailloux
@@ -28,7 +28,7 @@ include:
 collections:
   projects:
     output: true
-    permalink: /projects/:path/
+    permalink: /projects/:path
 
 defaults:
   -
