@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /ben/
+Disallow: /Corban_Mailloux-Resume.pdf
