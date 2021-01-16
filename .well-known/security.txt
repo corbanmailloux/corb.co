@@ -1,3 +1,0 @@
-Contact: mailto:security@corb.co
-Preferred-Languages: en
-Canonical: https://corb.co/.well-known/security.txt
