@@ -1,6 +1,6 @@
 ---
 title: "Mystery Mansion, corb.co Edition"
-date: 2016-01-10T00:00:00-05:00
+date: 2016-01-10
 
 description: A quick Python rebuild of a classic electronic board game.
 summary: A quick Python rebuild of a classic electronic board game.
@@ -20,6 +20,6 @@ At a recent family gathering, we went to play the game and discovered that the "
 
 Later on, I went back through and recorded my best impression of the talking voice. The voice-overs use [winsound](https://docs.python.org/3.6/library/winsound.html) on Windows and [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/) on Linux. The rest of the system is running on pure Python.
 
-The project is [available on GitHub](https://github.com/corbanmailloux/MysteryMansion), where there is a readme with installation instructions.
+The project is [available on {{< fontawesome github >}} GitHub](https://github.com/corbanmailloux/MysteryMansion), where there is a readme with installation instructions.
 
 Any questions can be directed at MysteryMansion@corb.co.
