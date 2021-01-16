@@ -1,0 +1,10 @@
+.logo a img {
+    border-radius: 0px;
+}
+
+
+/* Hide the copyright. */
+
+.footer {
+    display: none;
+}

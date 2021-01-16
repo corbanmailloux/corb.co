@@ -1,0 +1,111 @@
+baseURL: "https://dev.corb.co"
+languageCode: "en-us"
+title: "corb.co"
+theme: "PaperMod"
+
+paginate: 5
+
+menu:
+  main:
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
+    - name: Posts
+      url: posts
+      weight: 10
+    # - identifier: tags
+    #   name: tags
+    #   url: /tags/
+    #   weight: 20
+
+enableRobotsTXT: true
+# buildDrafts: false
+# buildFuture: false
+# buildExpired: false
+
+# googleAnalytics: UA-123-45
+
+params:
+  # env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: corb.co
+  description: "Personal and projects site for Corban Mailloux"
+  author: Corban Mailloux
+
+  # images: ["<link or path of image for opengraph, twitter-cards>"]
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  comments: false
+
+  # Disable light/dark switching for now.
+  defaultTheme: light
+  disableThemeToggle: true
+
+  disableSpecial1stPost: false
+
+  assets:
+    # disableHLJS: true # to disable highlightjs
+    # disableFingerprinting: true
+    favicon: "/icons/favicon.ico"
+    favicon16x16: "/icons/favicon-16x16.png"
+    favicon32x32: "/icons/favicon-32x32.png"
+    apple_touch_icon: "/icons/apple-touch-icon.png"
+    safari_pinned_tab: "/icons/safari-pinned-tab.svg"
+
+  label:
+    # text: "corb.co"
+    icon: /icons/logo.min.svg
+    iconHeight: 38
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: 👋🏼 Hey! I'm Corban.
+    subtitle: |
+      Software developer. Electric unicycler. Home automator. Rock climber. [Amateur cat trainer.](https://www.instagram.com/theladies_sashaandmaya/)
+    imageUrl: "/images/corban-mailloux.jpg"
+    imageWidth: 300
+    imageHeight: 300
+    imageTitle: Headshot of Corban Mailloux
+    # buttons:
+    #   - name: Posts
+    #     url: posts
+    #   - name: Tags
+    #     url: tags
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Welcome!"
+    Content: blank
+
+  socialIcons:
+    - name: email
+      url: mailto:web@corb.co
+    - name: github
+      url: "https://github.com/corbanmailloux"
+    - name: instagram
+      url: "https://www.instagram.com/corbanmailloux/"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/corbanmailloux"
+
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    responsiveImages: true
+    # hiddenInList: false # hide on list pages and home
+    # hiddenInSingle: false # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
