@@ -3,8 +3,41 @@
 }
 
 
+/* For the FontAwesome short code */
+
+.inline-svg {
+    display: inline-block;
+    height: 1.15rem;
+    width: 1.15rem;
+    top: 0.15rem;
+    position: relative;
+}
+
+
 /* Hide the copyright. */
 
 .footer {
     display: none;
+}
+
+
+/* Custom for Shredify.me */
+
+.shredify-image {
+    animation: rockingBetty linear 1.5s infinite;
+    transform-origin: 50% 50%;
+    border-radius: 50% !important;
+    margin-bottom: 5%;
+}
+
+@keyframes rockingBetty {
+    0%,
+    100% {
+        transform: rotate(-25deg);
+        filter: invert(0);
+    }
+    50% {
+        transform: rotate(25deg);
+        filter: invert(100%);
+    }
 }
