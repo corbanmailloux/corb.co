@@ -68,9 +68,9 @@ params:
     imageWidth: 300
     imageHeight: 300
     imageTitle: Headshot of Corban Mailloux
-    # buttons:
-    #   - name: Posts
-    #     url: posts
+    buttons:
+      - name: Posts
+        url: posts
     #   - name: Tags
     #     url: tags
 
