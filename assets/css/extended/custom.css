@@ -3,6 +3,13 @@
 }
 
 
+/* Override the bottom margin on images. Otherwise this is set to `margin: auto` */
+
+.post-content img {
+    margin-bottom: 20px !important;
+}
+
+
 /* For the banner short code */
 
 .alert {

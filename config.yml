@@ -7,17 +7,12 @@ paginate: 5
 
 menu:
   main:
-    # - identifier: categories
-    #   name: categories
-    #   url: /categories/
-    #   weight: 10
+    - name: About
+      url: about
+      weight: 10
     - name: Posts
       url: posts
-      weight: 10
-    # - identifier: tags
-    #   name: tags
-    #   url: /tags/
-    #   weight: 20
+      weight: 20
 
 enableRobotsTXT: true
 # buildDrafts: false
@@ -71,8 +66,6 @@ params:
     buttons:
       - name: Posts
         url: posts
-    #   - name: Tags
-    #     url: tags
 
   # home-info mode
   homeInfoParams:
