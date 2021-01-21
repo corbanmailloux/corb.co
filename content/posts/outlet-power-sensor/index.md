@@ -5,10 +5,13 @@ date: 2021-01-16T23:44:48-05:00
 description: "A plug-in system to create smart switches out of switched outlets."
 summary: "A plug-in system to create smart switches out of switched outlets."
 
+showtoc: true
+
 tags:
   - Home Automation
 
-showtoc: true
+categories:
+  - Projects
 
 draft: true
 ---

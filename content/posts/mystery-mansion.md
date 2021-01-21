@@ -9,6 +9,9 @@ tags:
   - Game
   - Software Project
 
+categories:
+  - Projects
+
 aliases:
   - /projects/mysterymansion
 ---

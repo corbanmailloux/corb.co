@@ -9,6 +9,9 @@ tags:
   - Website
   - Software Project
 
+categories:
+  - Projects
+
 aliases:
   - /projects/shredify
 ---
