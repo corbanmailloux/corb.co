@@ -25,7 +25,7 @@ A good example is smart switches. If I want to use the existing wall switches as
 
 ---
 
-I've lived in several apartments where the wall switch actually controls a single socket of one outlet. The expectation is that you would plug a floor lamp into that outlet and use the wall switch to control it, but I like to have all of my lighting integrated into my home automation system. That leaves a couple options:
+I've lived in several apartments where the wall switch controls a single socket of one outlet. The expectation is that you would plug a floor lamp into that outlet and use the wall switch to control it, but I like to have all of my lighting integrated into my home automation system. That leaves a couple options:
 
 - Replace the switch with a smart switch. This is the best answer and the one I would do, but I can't modify the wiring in an apartment so that's a non-starter.
 - Leave the switch in the "on" position at all times and put a smart bulb in the lamp. This would allow automated control of the light, but the switch is useless. Additionally, if someone accidentally turns off the switch, the light can no longer be controlled. This isn't ideal, but it is a [common compromise people make when installing smart light bulbs](https://www.howtogeek.com/357476/install-light-switch-guards-to-keep-people-from-turning-off-your-smart-bulbs/).
@@ -49,11 +49,11 @@ If you don't need any outputs, the wiring can be simplified.
 
 ## Real-World Usage
 
-So it's a cool device, but what does it really do? Here's an example of how I use them.
+So it's a cool device, but what does it actually do? Here's an example of how I use them.
 
 In my bedroom, there is a wall switch next to the door. That switch normally controls an outlet in a pretty inconvenient location, not at all where I wanted to put the main light for the room. We put a floor lamp with a smart bulb in our ideal placement spot and set up control of the light with remotes on our bedside tables. That left only voice control to turn on the light when you enter the room and a useless switch on the wall, confusing guests and lowering the family approval factor.
 
-I plugged in a outlet power sensor to the switched outlet and wrote a [very simple automation](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/bedroom_outlet_sensor.yaml) so toggling the wall switch toggles the lamp. This is now the best of all options: I can control the light from the wall switch, automations, bedside remotes, phones, and voice control, all without modifying any wiring.
+I plugged in an outlet power sensor to the switched outlet and wrote a [very simple automation](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/bedroom_outlet_sensor.yaml) so toggling the wall switch toggles the lamp. This is now the best of all options: I can control the light from the wall switch, automations, bedside remotes, phones, and voice control, all without modifying any wiring.
 
 ## I'm sold. How do I build one?
 
@@ -61,10 +61,10 @@ I plugged in a outlet power sensor to the switched outlet and wrote a [very simp
 **Caution!** This project involves working with high-voltage wall power and wiring connections in a somewhat unexpected way. Wall power is dangerous, and I'm not responsible if you copy this project and something goes wrong. _Please_ be very careful, check all of your connections, and make sure you understand the risks before proceeding.
 {{< /banner >}}
 
-I had this idea a few years back and was surprised there wasn't a product on the market for it. It seems the apartment-dwelling home automation market is still small. I've built a couple versions over time — including a clever setup that involved disassembling an LED nightlight — but ultimately didn't feel like the projects were safe enough to share with other people.
+I had this idea a few years back and was surprised there wasn't a product on the market for it. It seems the apartment-dwelling home automation market is still small. I've built a few versions over time — including a clever setup that involved disassembling an LED nightlight — but ultimately didn't feel like the projects were safe enough to share with other people.
 
 Then I realized I could build one out of a [Shelly](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/). If you're unfamiliar, it's a $10 WiFi relay intended to be mounted behind an existing switch to convert a standard switch into a smart switch. Sounds very similar to what we're doing!
-The Shelly already provides the high-voltage connections we need in a safe manner, and it's a trusted, UL-listed device. It's definitely a step up from hacking up a nightlight.
+The Shelly already provides the high-voltage connections we need safely, and it's a trusted, UL-listed device. It's definitely a step up from hacking up a nightlight.
 
 ### Parts List
 
@@ -80,7 +80,7 @@ The Shelly already provides the high-voltage connections we need in a safe manne
 
 ## Software - ESPHome
 
-While the Shelly comes with [very decent software](https://shelly.cloud/knowledge-base/devices/shelly-1/) that even includes the ability to run the device in a fully-local setup, I prefer to use [ESPHome](https://esphome.io/) on my devices. ESPHome is an excellent open source project that allows YAML configuration of devices and a very clean integration with Home Assistant.
+While the Shelly comes with [very decent software](https://shelly.cloud/knowledge-base/devices/shelly-1/) that even includes the ability to run the device in a fully-local setup, I prefer to use [ESPHome](https://esphome.io/) on my devices. ESPHome is an excellent open-source project that allows YAML configuration of devices and very clean integration with Home Assistant.
 
 I won't go into detail about how to flash ESPHome onto a Shelly, but there are a few options. I use an [FTDI USB to TTL serial adapter like this one](https://www.aliexpress.com/item/32617951363.html) and directly flash to the device. The docs [here](https://tasmota.github.io/docs/devices/Shelly-1/) and [here](https://esphome.io/guides/getting_started_hassio.html) will be helpful for that type of install.
 I recently [came across a way to flash the Shelly over-the-air from the stock firmware](https://savjee.be/2020/09/shelly-2.5-flash-esphome-over-the-air/), but I haven't tested this process myself.
@@ -180,6 +180,6 @@ automation:
 
 ## Wrapping Up
 
-I've been using two of these simple devices in my apartment for about 6 months now and I'm amazed how good the experience is. As a renter, replacing fixtures and switches is out of the question, but these sensors give the full smart switch experience with no permanent modifications. They also improve the overall user experience because they use an existing, well-known setup that guests don't have to understand to use. To everyone other than me, the switch just controls the light, and that's all they have to know. Finally, by decoupling the light switch from the light itself, I can configure multiple inputs and multiple outputs. I can turn the light on with the light switch, have it dim automatically when we watch a movie, and turn it off from a [bedside button](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/bedside_button_2_corban.yaml#L44-L54) as part of my nighttime routine.
+I've been using two of these simple devices in my apartment for about 6 months now and I'm amazed by how good the experience is. As a renter, replacing fixtures and switches is out of the question, but these sensors give the full smart switch experience with no permanent modifications. They also improve the overall user experience because they use an existing, well-known setup that guests don't have to understand to use. To everyone other than me, the switch just controls the light, and that's all they have to know. Finally, by decoupling the light switch from the light itself, I can configure multiple inputs and multiple outputs. I can turn the light on with the light switch, have it dim automatically when we watch a movie, and turn it off from a [bedside button](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/bedside_button_2_corban.yaml#L44-L54) as part of my nighttime routine.
 
 Good home automation is all about improving the experience without getting in the way; this project has fulfilled both of those goals.
