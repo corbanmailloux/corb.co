@@ -1,5 +1,6 @@
 ---
 title: About Corban
+date: 2021-01-01
 
 hidemeta: true
 
