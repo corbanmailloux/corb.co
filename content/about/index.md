@@ -2,6 +2,10 @@
 title: About Corban
 
 hidemeta: true
+
+cover:
+  image: "corban-mailloux.jpg"
+  hidden: true # TODO: PR to PaperMod to make this override the Site-level settings. It's in single.html.
 ---
 
 {{< image src="corban-mailloux.jpg#center" >}}
