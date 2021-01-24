@@ -2,8 +2,8 @@
 title: RGBWeb
 date: 2014-04-26
 
-description: Bluetooth control of RGB LEDs with Arduino and Android App Inventor
-summary: Bluetooth control of RGB LEDs with Arduino and Android App Inventor.
+description: Internet-controllable RGB lighting
+summary: Internet-controllable RGB lighting using Arduino.
 
 tags:
   - Microcontroller
