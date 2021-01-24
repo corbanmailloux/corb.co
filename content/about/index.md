@@ -16,7 +16,7 @@ Prior to CloudHealth, I was a software engineering intern at [EnerNOC](https://w
 
 I'm an alumnus of [Rochester Institute of Technology](https://www.rit.edu/) where I majored in software engineering with a focus on computing security. I also minored in communications.
 
-I enjoy riding electric unicycles, especially my current favorite: my [KingSong 16x](https://www.ewheels.com/product/new-king-song-16x-1554wh-battery-2000w-motor-3-wide-tire/).
+I enjoy riding electric unicycles, especially my current favorite: my [KingSong 16X](https://www.ewheels.com/product/new-king-song-16x-1554wh-battery-2000w-motor-3-wide-tire/).
 When not in the middle of a pandemic, I frequently go rock climbing indoors and out.
 
 At home I train our two cats (Maya and Sasha) to do various tricks including jumping through hoops, walking upright, and heeling by my side. You can follow our progress and see lots of wonderful cat pictures on [@theladies_sashaandmaya's Instagram {{< fontawesome instagram >}}](https://www.instagram.com/theladies_sashaandmaya/?r=nametag).
