@@ -27,5 +27,3 @@ For example, we have:
 - [Reba McEnShred with a metal cover of her '90s hit "Fancy"](http://shredify.corb.co/reba/)
 
 The result is available at [shredify.corb.co](http://shredify.corb.co/), and the code is [available on {{< fontawesome github >}} GitHub](https://github.com/corbanmailloux/shredify.me).
-
-Any questions can be directed at shredify.me@corb.co.
