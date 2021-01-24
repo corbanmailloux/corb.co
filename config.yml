@@ -14,7 +14,7 @@ menu:
       url: posts
       weight: 20
 
-enableRobotsTXT: true
+enableRobotsTXT: false
 # buildDrafts: false
 # buildFuture: false
 # buildExpired: false

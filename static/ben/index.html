@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Ben Tracker</title>
+    <style type="text/css">
+        html,
+        body,
+        #map-canvas {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbDyA5C35uSY0OFWRsJ_JBJaAep7mFuQ4">
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            var usCenter = new google.maps.LatLng(39.8282, -98.5895);
+
+            var mapOptions = {
+                center: usCenter,
+                zoom: 5,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            };
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+
+            var ctaLayer = new google.maps.KmlLayer({
+                // Hide the popup windows
+                clickable: false,
+                // Set this layer on the map
+                map: map,
+                // Add the static KML
+                url: "https://corb.co/ben/tracks.kml",
+                // Don't re-center the map.
+                preserveViewport: true
+            });
+
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+    <div id="map-canvas"></div>
+    {% include google-analytics.html %}
+</body>
+
+</html>
