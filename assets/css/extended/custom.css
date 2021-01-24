@@ -1,0 +1,73 @@
+.logo a img {
+    border-radius: 0px;
+}
+
+
+/* Override the bottom margin on images. Otherwise this is set to `margin: auto` */
+
+.post-content img {
+    margin-bottom: 20px !important;
+}
+
+
+/* For the banner short code */
+
+.banner {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.banner.banner-red {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.banner.banner-blue {
+    background-color: #d9edf7;
+    color: #31708f;
+    border-color: #bcdff1;
+}
+
+
+/* For the FontAwesome short code */
+
+.inline-svg {
+    display: inline-block;
+    height: 1.15rem;
+    width: 1.15rem;
+    top: 0.15rem;
+    position: relative;
+}
+
+
+/* Hide the copyright. */
+
+.footer {
+    display: none;
+}
+
+
+/* Custom for Shredify.me */
+
+.shredify-image {
+    animation: rockingBetty linear 1.5s infinite;
+    transform-origin: 50% 50%;
+    border-radius: 50% !important;
+    margin-bottom: 5%;
+}
+
+@keyframes rockingBetty {
+    0%,
+    100% {
+        transform: rotate(-25deg);
+        filter: invert(0);
+    }
+    50% {
+        transform: rotate(25deg);
+        filter: invert(100%);
+    }
+}
