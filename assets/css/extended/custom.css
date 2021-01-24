@@ -12,15 +12,24 @@
 
 /* For the banner short code */
 
-.alert {
-    background-color: #f8d7da;
-    color: #721c24;
-    border-color: #f5c6cb;
+.banner {
     position: relative;
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: 0.25rem;
+}
+
+.banner.banner-red {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.banner.banner-blue {
+    background-color: #d9edf7;
+    color: #31708f;
+    border-color: #bcdff1;
 }
 
 

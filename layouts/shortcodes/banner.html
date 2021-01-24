@@ -1,1 +1,2 @@
-<div class=alert>{{ .Inner | markdownify }}</div>
+{{- $bannerClass := (.Get "color" | default "red") -}}
+<div class="banner banner-{{$bannerClass}}">{{ .Inner | markdownify }}</div>
