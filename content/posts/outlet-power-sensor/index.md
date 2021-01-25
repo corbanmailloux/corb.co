@@ -38,7 +38,7 @@ What if I could just plug in a device to the outlet that would detect if the swi
 
 Enter the "outlet power sensor" (better name pending. [Suggestions?](mailto:outlet-power-sensor@corb.co))
 
-{{< figure src="outlet-power-sensor.jpg" title="Initial Prototype Sensor" >}}
+{{< figure src="outlet-power-sensor.jpg" title="Initial Prototype Sensor" alt="Prototype sensor" >}}
 
 The sensor has two separate plugs on it that must both be plugged in. One is constant power to run the device, and the other is the sensor plug. When the sensor plug is connected to power, a `binary_sensor` in Home Assistant will be activated instantly.
 
@@ -82,7 +82,7 @@ The Shelly already provides the high-voltage connections we need safely, and it'
 
 While the Shelly comes with [very decent software](https://shelly.cloud/knowledge-base/devices/shelly-1/) that even includes the ability to run the device in a fully-local setup, I prefer to use [ESPHome](https://esphome.io/) on my devices. ESPHome is an excellent open-source project that allows YAML configuration of devices and very clean integration with Home Assistant.
 
-I won't go into detail about how to flash ESPHome onto a Shelly, but there are a few options. I use an [FTDI USB to TTL serial adapter like this one](https://www.aliexpress.com/item/32617951363.html) and directly flash to the device. The docs [here](https://tasmota.github.io/docs/devices/Shelly-1/) and [here](https://esphome.io/guides/getting_started_hassio.html) will be helpful for that type of install.
+I won't go into detail about how to flash ESPHome onto a Shelly, but there are a few options. I use an [FTDI USB to TTL serial adapter like this one](https://www.aliexpress.com/item/32617951363.html) and directly flash to the device. The [Tasmota](https://tasmota.github.io/docs/devices/Shelly-1/) and [ESPHome](https://esphome.io/guides/getting_started_hassio.html) docs will be helpful for that type of install.
 I recently [came across a way to flash the Shelly over-the-air from the stock firmware](https://savjee.be/2020/09/shelly-2.5-flash-esphome-over-the-air/), but I haven't tested this process myself.
 
 The configuration I use for ESPHome is [available here](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/bedroom_outlet_sensor.yaml), but it's pretty simple.
@@ -132,7 +132,7 @@ Using ESPHome has another benefit: autodiscovery in Home Assistant. If you flash
 
 After it's set up, you should have a new entry in the "Configuration -> Devices" menu of Home Assistant:
 
-{{< figure src="esphome-device-in-home-assistant.jpg#center" >}}
+{{< figure src="esphome-device-in-home-assistant.jpg#center" alt="Screenshot of Home Assistant integration" >}}
 At this point, you can flip the switch on the wall and you should see the outlet sensor entity change state. That means we're almost done.
 
 ### Automation

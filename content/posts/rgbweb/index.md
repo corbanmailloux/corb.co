@@ -29,7 +29,7 @@ RGBWeb is a project created to use an Android device, an Arduino, and a server t
 ## App Screenshot
 
 This is what the app looks like:
-{{< figure src="rgbweb-screenshot.png" >}}
+{{< figure src="rgbweb-screenshot.png" alt="Screenshot of Android app" >}}
 
 ## Hardware (Arduino)
 
