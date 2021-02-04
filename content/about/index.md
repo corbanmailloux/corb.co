@@ -12,7 +12,7 @@ cover:
 {{< image src="corban-mailloux.jpg#center" alt="Headshot of Corban Mailloux" >}}
 
 Hey! I'm Corban Mailloux. I'm a senior software engineer at [CloudHealth by VMware](https://www.cloudhealthtech.com/) in Boston, MA where I build and maintain several components of our SaaS platform. I'm particularly focused on scaling our data ingestion pipelines, including one system running more than a million jobs per minute.
-Prior to CloudHealth, I was a software engineering intern at [EnerNOC](https://www.enelx.com/) (now "Enel X") with the identity and access management team.
+Before CloudHealth, I was a software engineering intern at [EnerNOC](https://www.enelx.com/) (now "Enel X") with the identity and access management team.
 
 I'm an alumnus of [Rochester Institute of Technology](https://www.rit.edu/computing/) where I majored in software engineering with a focus on computing security. I also minored in communications.
 
@@ -22,4 +22,4 @@ When not in the middle of a pandemic, I frequently go rock climbing indoors and 
 At home I train our two cats (Maya and Sasha) to do various tricks including jumping through hoops, walking upright, and heeling by my side. You can follow our progress and see lots of wonderful cat pictures on [@theladies_sashaandmaya's Instagram {{< fontawesome instagram >}}](https://www.instagram.com/theladies_sashaandmaya/?r=nametag).
 {{< figure src="maya-and-sasha.jpg#center" link="https://www.instagram.com/theladies_sashaandmaya/?r=nametag" alt="Collage of cat pictures" >}}
 
-As you'll see in my [projects](/categories/projects/), I like to work on home automation projects and generally enjoy DIY electronics.
+As you'll see in my [projects](/categories/projects/), I like to work on home automation projects and generally enjoy DIY electronics. For my home automation system, I use [Home Assistant](https://www.home-assistant.io/), an open-source, Python-based platform that integrates with just about everything. You can find my complete Home Assistant configuration on [{{< fontawesome github >}} Github](https://github.com/corbanmailloux/home-assistant-configuration), with documentation of some of the major parts [in the repo's wiki](https://github.com/corbanmailloux/home-assistant-configuration/wiki/Packages).
