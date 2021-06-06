@@ -4,14 +4,14 @@ date: 2021-01-01
 hidemeta: true
 
 cover:
-  image: "proposal_snapshot.png"
+  image: "proposal_snapshot.jpg"
 
 private: true # Hide from sitemap.
 ---
 
 Here are the details for the wedding of Maggie Russ and Corban Mailloux!
 
-If you've been invited, we look forward to seeing you on **September 18th, 2021 at 4:00pm** for the intimate ceremony, followed by dinner, ice cream, drinks, and a fun backyard party!
+If you've been invited, we look forward to seeing you on **September 18th, 2021 at 4:00pm** for the intimate ceremony, followed by dinner, drinks, and a fun backyard party!
 
 The wedding will be located at Tali and Jake's house at [574 Four Mile Brook Rd, Northfield, MA 01360](https://goo.gl/maps/7srLSTH7vRgA1bb89).
 
