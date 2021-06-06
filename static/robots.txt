@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /ben/
 Disallow: /Corban_Mailloux-Resume.pdf
+Disallow: /wedding
 Sitemap: https://corb.co/sitemap.xml
