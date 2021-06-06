@@ -6,6 +6,8 @@ hidemeta: true
 cover:
   image: "https://i.pinimg.com/736x/d7/5a/01/d75a01dc740ae6e2b28e4f0dd6df765d--bad-photos-weddings.jpg"
 #   hidden: true
+
+private: true # Hide from sitemap.
 ---
 
 Here are the details for the wedding of Maggie Russ and Corban Mailloux!
