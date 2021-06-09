@@ -1,5 +1,7 @@
 ---
 title: Maggie and Corban's Wedding
+description: "Details for the wedding of Maggie Russ and Corban Mailloux!"
+
 date: 2021-01-01
 hidemeta: true
 

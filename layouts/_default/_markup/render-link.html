@@ -1,0 +1,2 @@
+{{/* From https://gohugo.io/getting-started/configuration-markup#link-with-title-markdown-example */}}
+<a href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}" {{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener" {{ end }}>{{ .Text | safeHTML }}</a>
