@@ -21,7 +21,7 @@ showtoc: true
 
 {{< banner color="blue" >}}
 **Note from the future:** [RGBDuino](/posts/rgbduino) and [RGBWeb](/posts/rgbweb) are _very_ old and outdated, but they were some of my first publicly-shared projects so I keep them up for historical purposes. They were also my first steps into home automation and IoT devices.
-There are now many better ways to build this kind of system, especially if you're trying to use it as part of a larger lighting system.
+There are now many better ways to build this kind of system, especially if you're trying to use it as part of a larger lighting system. Personally, I love [ESPHome](https://esphome.io/) and use it with [Home Assistant](https://www.home-assistant.io/).
 {{< /banner >}}
 
 RGBDuino is a project created to use an Android device and an Arduino to control a string of red-green-blue LEDs over Bluetooth. The project consists of two main parts: the hardware side and the software side.
