@@ -37,4 +37,5 @@ That being said, if you'd still like to give us a gift, we have a [registry on Z
 
 ## RSVP
 
+If you have issues using the form below, [click here](https://forms.gle/x9mY5yECkR1gsCNg9) to complete it directly in Google Forms.
 {{< wedding_form >}}
