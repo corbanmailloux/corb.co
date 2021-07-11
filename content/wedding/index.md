@@ -35,7 +35,6 @@ We are hoping to wrap up our night with a bonfire, so please consider bringing a
 Gifts are _not expected_ for our wedding. We sincerely would just love for you to be there and have a good time.
 That being said, if you'd still like to give us a gift, we have a [registry on Zola](https://www.zola.com/registry/maggieandcorban).
 
-## Quick Reference
+## RSVP
 
-- **When:** September 18th, 2021 at 4:00pm (Add to [Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20210918T200000Z%2F20210919T003000Z&details=See%20https%3A%2F%2Fcorb.co%2Fwedding%20for%20details.&location=574%20Four%20Mile%20Brook%20Rd%2C%20Northfield%2C%20MA%2001360&text=Maggie%20and%20Corban%27s%20Wedding) or [Outlook Calendar](https://outlook.live.com/calendar/0/deeplink/compose?body=See%20https%3A%2F%2Fcorb.co%2Fwedding%20for%20details.&enddt=2021-09-19T00%3A30%3A00%2B00%3A00&location=574%20Four%20Mile%20Brook%20Rd%2C%20Northfield%2C%20MA%2001360&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2021-09-18T20%3A00%3A00%2B00%3A00&subject=Maggie%20and%20Corban%27s%20Wedding))
-- **Where:** [574 Four Mile Brook Rd, Northfield, MA 01360](https://goo.gl/maps/7srLSTH7vRgA1bb89)
+{{< wedding_form >}}
