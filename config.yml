@@ -58,7 +58,9 @@ params:
     enabled: true # needs to be explicitly set
     title: 👋🏼 Hey! I'm Corban.
     subtitle: |
-      Software developer. Electric unicycler. Home automator. Rock climber. [Amateur cat trainer.](https://www.instagram.com/theladies_sashaandmaya/)
+      Software developer. Electric unicycler. Home automator.
+
+      FPV drone pilot. Rock climber. [Amateur cat trainer.](https://www.instagram.com/theladies_sashaandmaya/)
     imageUrl: "/images/corban-mailloux.jpg"
     imageWidth: 300
     imageHeight: 300
