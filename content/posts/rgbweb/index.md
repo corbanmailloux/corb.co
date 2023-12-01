@@ -62,14 +62,14 @@ http://www.example.com/index.php?RGBColor=FFFFFF
 
 The other web page is not much of a page at all; it's a custom API and is only intended to be accessed by the Android app. It uses PHP POST requests sent by the Android app to execute commands. This is the page that handles more complex features, such as password protection (very basic and unencrypted) and other custom commands like fading.
 
-The actual PHP files, in the correct folder structure on on Github (see link below).
+The actual PHP files, in the correct folder structure, are on Github (see link below).
 
-The basic setup of the server is like this:
+The basic setup of the server is this:
 
 1. Set up any server system that allows PHP.
 1. Connect the Arduino (wiring is linked above) via USB to the computer that is running the server.
-1. Open the Arduino software and program the Arduino with the code provided, and note the COM port that the Arduino is on.
-1. Update the PHP code to reference the correct COM port, and to use a password of your choosing.
+1. Open the Arduino software and program the Arduino with the code provided and note the COM port that the Arduino is on.
+1. Update the PHP code to reference the correct COM port and to use a password of your choosing.
 1. Run the server.
 
 ## Software
