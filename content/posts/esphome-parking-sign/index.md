@@ -32,7 +32,7 @@ Turns out you can buy anything on EBay, so I found a [pedestrian crossing sign](
 
 It was a pain to open up because it's sealed and weatherproof, but I was able to cut through the plastic shell with a Dremel and several cut-off disks. Definitely wear eye protection for this part.
 
-Inside, I found that the sign was split into two distinct systems: the hand/walk part, and the countdown timer. The hand/walk part was easy enough to tap into: simply apply ~12V DC to one set of pins for the hand signal and another set of pins for the walk signal. I thought it was interesting that the system is fail-safe, so the circuit automatically puts the hand back up if you try to turn on both at once, which is an invalid configuration for the light controller.
+Inside, I found that the sign was split into two distinct systems: the hand/walk part, and the countdown timer. The hand/walk part was easy enough to tap into: simply apply ~12V DC to one set of pins for the hand signal and another set of pins for the walk signal. I thought it was interesting that the system is fail-safe, so the circuit automatically puts the hand back up if you try to turn on both at once.
 
 For the numerical displays, I decided to be a bit more destructive. I _could_ have soldered up a control board for the existing LED arrangement, but it would either require a large number of GPIO pins or a 7-segment driver circuit. Most of the driver chips I could find wouldn't work with the high power draw of a sign this large, so I ultimately just replaced the LEDs with my own.
 I used a strip of addressable RGB LEDs, cut and chained to cover all segments. This allows the segment control to be fully done in software and gives some extra features like color control and effects.
@@ -41,7 +41,7 @@ I used a strip of addressable RGB LEDs, cut and chained to cover all segments. T
 alt="RGB strips cut and arranged in the pattern of two 7-segment displays"
 align=center
 height=500
-caption="I didn't think to paint the board black until _after_ mounting these strips...">}}
+caption="I didn't think to paint the backing board black until _after_ mounting these strips...">}}
 
 ### Control Hardware and Software
 
@@ -89,7 +89,15 @@ To make controlling the numbers from Home Assistant more practical, I also added
 
 In Home Assistant, there is now a simple number input that I can set to any valid number to update the display.
 
-#### TODO: Screenshot of the HASS device page
+{{< figure src="hass-device-card.png"
+alt="Cropped screenshot of a number entry box and two switches in Home Assistant."
+align=center
+height=500 >}}
+
+{{< figure src="sign-example.jpg"
+alt="Cropped screenshot of a number entry box and two switches in Home Assistant."
+align=center
+height=500 >}}
 
 ## Making it Useful: Laser Time-of-Flight Parking Sensor
 
@@ -145,7 +153,7 @@ Finally, using Home Assistant automations, turn on the parking sensor when the g
 
 Putting it all together, here's the experience of driving into my garage:
 
-#### TODO: Vido
+#### TODO: Video
 
 ## Code and Resource Links
 
@@ -155,9 +163,11 @@ While I imagine each type of pedestrian sign is unique, this project should be r
 
 #### Sign
 
-- Pedestrian Crossing Sign with Countdown Display: [EBay listing](https://www.ebay.com/itm/125992762337), [Manufacturer page with datasheet](https://www.eoi.com.tw/Product/Product_Detial_TS?product_id=2268)
+- Pedestrian Crossing Sign with Countdown Display: [eBay listing](https://www.ebay.com/itm/125992762337), [Manufacturer page with datasheet](https://www.eoi.com.tw/Product/Product_Detial_TS?product_id=2268)
 - ESP32: [ESP32 D1 Mini on AliExpress](https://www.aliexpress.us/item/3256804611055118.html)
-- WS2815 12VDC Individually-Addressable RGB LED Strip: I ordered from [BTFLighting on AliExpress](https://www.aliexpress.us/item/2251832774866810.html).
+- WS2815 12VDC Individually-Addressable RGB LED Strip: [BTFLighting on AliExpress](https://www.aliexpress.us/item/2251832774866810.html)
+- Miscellaneous 12+V DC MOSFETs for controlling the hand/walk LEDs
+- 12V DC Power Supply
 
 #### Sensors
 
@@ -165,7 +175,7 @@ While I imagine each type of pedestrian sign is unique, this project should be r
 - VL53L1X Laser ToF Sensor: Note that there are different models with different ranges. I ordered the VL53L1X model from [here on AliExpress](https://www.aliexpress.us/item/3256802905626316.html).
   - [Datasheet from the manufacturer](https://www.st.com/resource/en/datasheet/vl53l1x.pdf)
 
-## Code
+### Code
 
 - [ESPHome config for the sign](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sign.yaml)
 - ESPHome config for a sensor: [Base template](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/common/garage_parking_sensor_base.yaml), [Device config](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sensor_right.yaml), [Custom ESPHome library for using the VL53L1X sensor (which I've slightly modified in my version)](https://github.com/mrtoy-me/esphome-my-components/tree/main/components/vl53l1x)
