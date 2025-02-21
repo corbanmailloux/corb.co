@@ -3,7 +3,8 @@ languageCode: "en-us"
 title: "corb.co"
 theme: "PaperMod"
 
-paginate: 5
+pagination:
+  pagerSize: 5
 
 menu:
   main:
