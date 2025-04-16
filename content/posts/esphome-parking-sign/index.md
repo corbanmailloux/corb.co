@@ -1,11 +1,11 @@
 ---
-title: "ESPHome Parking Sensor and Pedestrian Sign"
+title: "Pedestrian Crossing Light as Parking Marker"
 date: 2024-03-12T00:00:00-05:00
 
-description: "Repurposing a pedestrian crossing sign as a garage parking system."
-summary: "Repurposing a pedestrian crossing sign as a garage parking system."
+description: "Repurposing a pedestrian crossing light as a garage parking system using ESPHome"
+summary: "Repurposing a pedestrian crossing light as a garage parking system using ESPHome"
 
-showtoc: true
+showtoc: false
 
 tags:
   - Home Automation
@@ -18,13 +18,16 @@ draft: true
 
 Ever since I was a kid, I've always wanted to put up a traffic light somewhere in my house. Now that my wife and I are renovating our own home, I finally get the chance to make these dreams a reality. Recently I finally realized that it's hard to make a traffic light fit in with classy decor (or at least that's what my wife says), so the dreams have been modified.
 
-**Let's put a pedestrian crossing sign in my garage!**
+**Let's put a pedestrian crossing light in my garage!**
 
 ## The Sign
 
-### TODO: Image of installed product
+{{< figure src="sign-example.jpg"
+alt="Pedestrian crossing light showing a walk signal and the number 42."
+align=center
+height=500 >}}
 
-Turns out you can buy anything on EBay, so I found a [pedestrian crossing sign](https://www.ebay.com/itm/125992762337) for about $40 total. It runs on 120v AC and has all the features I was looking for:
+Turns out you can buy anything on EBay, so I found a [pedestrian crossing signal](https://www.ebay.com/itm/125992762337) for about $40 total. It runs on 120v AC and has all the features I was looking for:
 
 1. Hand and walk icons that are the right shape (there are different styles in different models, but these are the ones I'm used to.)
 2. 2-digit, 7-segment number display
@@ -45,9 +48,7 @@ caption="I didn't think to paint the backing board black until _after_ mounting 
 
 ### Control Hardware and Software
 
-I went with an ESP32 to control the sign with some basic MOSFETs for switching the walk/hand load. The circuit is pretty simple:
-
-#### TODO: Schematic
+I went with an ESP32 to control the sign with some basic MOSFETs for switching the walk/hand load.
 
 For the software, I'm using [ESPHome](https://www.esphome.io/) because it integrates easily into Home Assistant.
 Using ESPHome's [light partition](https://www.esphome.io/components/light/partition.html) feature, I split the single addressable LED strip into a virtual `light` for each of the 14 segments, plus a `light` for each of the hand and walk signals.
@@ -94,20 +95,17 @@ alt="Cropped screenshot of a number entry box and two switches in Home Assistant
 align=center
 height=500 >}}
 
-{{< figure src="sign-example.jpg"
-alt="Cropped screenshot of a number entry box and two switches in Home Assistant."
-align=center
-height=500 >}}
-
 ## Making it Useful: Laser Time-of-Flight Parking Sensor
 
-Okay, so now I have a controllable sign on the wall, but let's put it to use as a parking sensor.
+Okay, so now I have a controllable light on the wall, but let's put it to use as a parking sensor.
 
 Yes, I could go old-school and just hang a tennis ball on a string to park in the right spot, but that doesn't use lasers and the speed of light.
 
 For this purpose, I built a separate ESPHome device using an ESP8266 and a [VL53L1X (datasheet)](https://www.st.com/resource/en/datasheet/vl53l1x.pdf) laser time-of-flight (ToF) sensor. By bouncing lasers off of my car and timing how long the laser takes to return to the sensor, we can calculate how far away the car is.
 
 I 3D printed a basic enclosure for this sensor and mounted it on my garage wall directly in line with the car's bumper. After I calibrated it to work for the ideal garage parking spot, I had a standard Home Assistant sensor that indicated how far the car had to move to be in the ideal spot.
+
+### TODO: Image of the sensor unit
 
 With some more ESPHome configuration and lambdas, changes to the distance will update the hand/walk signal and the number display.
 
@@ -152,18 +150,17 @@ Finally, using Home Assistant automations, turn on the parking sensor when the g
 ## Live Demo!
 
 Putting it all together, here's the experience of driving into my garage:
-
-#### TODO: Video
+{{< youtube PZU5H5tdLbM >}}
 
 ## Code and Resource Links
 
-While I imagine each type of pedestrian sign is unique, this project should be repeatable with some basic tools and hardware. I used the following:
+While I imagine each type of pedestrian signal is unique, this project should be repeatable with some basic tools and hardware. I used the following:
 
 ### Parts
 
 #### Sign
 
-- Pedestrian Crossing Sign with Countdown Display: [eBay listing](https://www.ebay.com/itm/125992762337), [Manufacturer page with datasheet](https://www.eoi.com.tw/Product/Product_Detial_TS?product_id=2268)
+- Pedestrian Crossing Signal with Countdown Display: [eBay listing](https://www.ebay.com/itm/125992762337), [Manufacturer page with datasheet](https://www.eoi.com.tw/Product/Product_Detial_TS?product_id=2268)
 - ESP32: [ESP32 D1 Mini on AliExpress](https://www.aliexpress.us/item/3256804611055118.html)
 - WS2815 12VDC Individually-Addressable RGB LED Strip: [BTFLighting on AliExpress](https://www.aliexpress.us/item/2251832774866810.html)
 - Miscellaneous 12+V DC MOSFETs for controlling the hand/walk LEDs
@@ -177,6 +174,6 @@ While I imagine each type of pedestrian sign is unique, this project should be r
 
 ### Code
 
-- [ESPHome config for the sign](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sign.yaml)
+- [ESPHome config for the light](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sign.yaml)
 - ESPHome config for a sensor: [Base template](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/common/garage_parking_sensor_base.yaml), [Device config](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sensor_right.yaml), [Custom ESPHome library for using the VL53L1X sensor (which I've slightly modified in my version)](https://github.com/mrtoy-me/esphome-my-components/tree/main/components/vl53l1x)
 - [Home Assistant package with automations](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/garage_parking_sign.yaml)
