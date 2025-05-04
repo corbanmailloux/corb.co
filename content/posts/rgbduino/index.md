@@ -15,8 +15,6 @@ categories:
 
 aliases:
   - /projects/rgbduino
-
-showtoc: true
 ---
 
 {{< banner color="blue" >}}
