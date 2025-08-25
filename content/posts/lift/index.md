@@ -18,6 +18,8 @@ aliases:
   - /projects/lift
 ---
 
+{{< figure src="lift.svg" alt="Bicep curl icon" width=40% align=center >}}
+
 From the description of the app on the [Google Play Store](https://play.google.com/store/apps/details?id=co.corb.dylt):
 
 > Do you lift?

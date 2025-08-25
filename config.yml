@@ -59,9 +59,19 @@ params:
     enabled: true # needs to be explicitly set
     title: 👋🏼 Hey! I'm Corban.
     subtitle: |
-      Software developer. Electric unicycler. Home automator.
+      🍼 Dad
 
-      FPV drone pilot. Rock climber. [Amateur cat trainer.](https://www.instagram.com/theladies_sashaandmaya/)
+      💻 Engineer
+
+      [💡 Home Automator](https://github.com/corbanmailloux/home-assistant-configuration)
+
+      [🎷 Musician](http://www.youtube.com/@WellSuitedBand)
+
+      🎮 FPV Drone Pilot
+
+      [🐈 Amateur Cat Trainer](https://www.instagram.com/theladies_sashaandmaya/)
+
+      ✅ Hobby Collector
     imageUrl: "/images/corban-mailloux.jpg"
     imageWidth: 300
     imageHeight: 300
@@ -91,9 +101,9 @@ params:
 
   cover:
     hidden: true # hide everywhere but not in structured data
-    responsiveImages: true
+    responsiveImages: false
     hiddenInList: true # hide on list pages and home
-    hiddenInSingle: false # hide on single page
+    # hiddenInSingle: false # hide on single page
 
   # for search
   # https://fusejs.io/api/options.html
