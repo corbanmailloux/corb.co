@@ -1,6 +1,6 @@
 ---
 title: "Outlet Power Sensor"
-date: 2021-01-16T23:44:48-05:00
+date: 2022-01-16
 
 description: "A renter-friendly system to create smart switches out of switched outlets."
 summary: "A renter-friendly system to create smart switches out of switched outlets."
