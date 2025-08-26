@@ -33,6 +33,7 @@ params:
   ShowReadingTime: true
   ShowShareButtons: false
   comments: false
+  disableScrollToTop: true
 
   # Disable light/dark switching for now.
   defaultTheme: light
