@@ -12,33 +12,46 @@ tags:
 
 categories:
   - Projects
-
-draft: true
 ---
 
-Ever since I was a kid, I've always wanted to put up a traffic light somewhere in my house. Now that my wife and I are renovating our own home, I finally get the chance to make these dreams a reality. Recently I finally realized that it's hard to make a traffic light fit in with classy decor (or at least that's what my wife says), so the dreams have been modified.
+Have you ever struggled to park perfectly in your garage? Sure, you could hang a tennis ball on a string, but where's the fun in that? Ever since I was a kid, I've dreamed of having a traffic light in my house. Now that my wife and I are renovating our home, I finally had the chance to make this dream a reality—with a slight modification. While a full traffic light might not fit with our home's aesthetic (according to my wife), I found the perfect alternative:
 
-**Let's put a pedestrian crossing light in my garage!**
+**A pedestrian crossing light for our garage!**
 
-## The Sign
+## The Light
 
 {{< figure src="sign-example.jpg"
 alt="Pedestrian crossing light showing a walk signal and the number 42."
 align=center
 height=500 >}}
 
-Turns out you can buy anything on EBay, so I found a [pedestrian crossing signal](https://www.ebay.com/itm/125992762337) for about $40 total. It runs on 120v AC and has all the features I was looking for:
+Turns out you can find anything on eBay, including a [pedestrian crossing signal](https://www.ebay.com/itm/125992762337) for just $40. This particular model was perfect because it had everything I was looking for:
 
-1. Hand and walk icons that are the right shape (there are different styles in different models, but these are the ones I'm used to.)
-2. 2-digit, 7-segment number display
-3. Cheap enough that I can break it and not feel bad.
+1. Hand and walk icons in the classic style I wanted (different models have varying designs)
+2. A 2-digit, 7-segment number display for distance readings
+3. Cheap enough that I can break it and not feel bad
 
-It was a pain to open up because it's sealed and weatherproof, but I was able to cut through the plastic shell with a Dremel and several cut-off disks. Definitely wear eye protection for this part.
+The sign runs on 120V AC out of the box, making it easy to work with.
 
-Inside, I found that the sign was split into two distinct systems: the hand/walk part, and the countdown timer. The hand/walk part was easy enough to tap into: simply apply ~12V DC to one set of pins for the hand signal and another set of pins for the walk signal. I thought it was interesting that the system is fail-safe, so the circuit automatically puts the hand back up if you try to turn on both at once.
+## Hardware Modifications
 
-For the numerical displays, I decided to be a bit more destructive. I _could_ have soldered up a control board for the existing LED arrangement, but it would either require a large number of GPIO pins or a 7-segment driver circuit. Most of the driver chips I could find wouldn't work with the high power draw of a sign this large, so I ultimately just replaced the LEDs with my own.
-I used a strip of addressable RGB LEDs, cut and chained to cover all segments. This allows the segment control to be fully done in software and gives some extra features like color control and effects.
+The first challenge was getting inside the weatherproof housing. These signs are built to withstand the elements, so it took some work with a Dremel and several cut-off disks to carefully cut through the plastic shell. (Pro tip: wear eye protection for this part! 🕶️)
+
+<small>(Note that if you only wanted to control the hand and walk lights, that could be done with just a relay board without opening the housing.)</small>
+
+Inside, I discovered the sign was divided into two separate systems:
+
+1. The hand/walk signals
+2. The countdown timer display
+
+The hand/walk system turned out to be surprisingly straightforward: it just needed ~12V DC applied to different sets of pins to control each signal. I was impressed to find that the system was designed with a fail-safe mechanism—if you try to activate both signals simultaneously, it defaults to showing the "stop" hand.
+
+The numerical displays required a different approach. While I _could_ have designed a control board for the existing LED setup, it would have required either:
+
+- A large number of GPIO pins (one for each segment)
+- A 7-segment driver circuit (which would struggle with the high power requirements of these large displays)
+
+Instead, I opted for a more DIY solution: replacing the original LEDs with addressable RGB LED strips. By carefully cutting and chaining the strips to follow the segment patterns, I created a fully software-controllable display that offered bonus features like color control and effects.
 
 {{< figure src="number-displays-raw.jpg"
 alt="RGB strips cut and arranged in the pattern of two 7-segment displays"
@@ -46,11 +59,17 @@ align=center
 height=500
 caption="I didn't think to paint the backing board black until _after_ mounting these strips...">}}
 
-### Control Hardware and Software
+## Making it Smart: Control System
 
-I went with an ESP32 to control the sign with some basic MOSFETs for switching the walk/hand load.
+For the brains of the operation, I chose an ESP32 coupled with some basic MOSFETs to handle the power switching for the walk/hand signals. I soldered these components to a piece of perfboard and managed to fit it in some empty space within the housing.
 
-For the software, I'm using [ESPHome](https://www.esphome.io/) because it integrates easily into Home Assistant.
+{{< figure src="finished-internals.jpeg"
+alt="Internals of a pedestrian crossing light, with additional wires and a microcontroller wedges into the extra space."
+align=center
+height=500 >}}
+
+On the software side, I went with [ESPHome](https://www.esphome.io/), an excellent firmware framework that integrates seamlessly with Home Assistant.
+
 Using ESPHome's [light partition](https://www.esphome.io/components/light/partition.html) feature, I split the single addressable LED strip into a virtual `light` for each of the 14 segments, plus a `light` for each of the hand and walk signals.
 
 ```yaml
@@ -86,7 +105,7 @@ light:
   # Continued for 14 segments...
 ```
 
-To make controlling the numbers from Home Assistant more practical, I also added a `number` component to the ESPHome configuration. I'd recommend reading the actual code/config for that [here](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sign.yaml#L343), but it takes a number -9 through 99 and figures out which segments to turn on.
+To make controlling the numbers from Home Assistant more practical, I also added a `number` component to the ESPHome configuration. I'd recommend reading the actual code/config for that [here](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sign.yaml#L392), but it takes a number -9 through 99 and figures out which segments to turn on.
 
 In Home Assistant, there is now a simple number input that I can set to any valid number to update the display.
 
@@ -95,25 +114,28 @@ alt="Cropped screenshot of a number entry box and two switches in Home Assistant
 align=center
 height=500 >}}
 
-## Making it Useful: Laser Time-of-Flight Parking Sensor
+## Making it Useful: Parking Distance Sensing
 
-Okay, so now I have a controllable light on the wall, but let's put it to use as a parking sensor.
+With a fully controllable display on the wall, it was time to make it actually useful as a parking aid.
 
-Yes, I could go old-school and just hang a tennis ball on a string to park in the right spot, but that doesn't use lasers and the speed of light.
+The classic way to do distance measurement with a microcontroller is using very cheap ultrasonic sensors like the ubiquitous [HC-SR04](https://www.sparkfun.com/ultrasonic-distance-sensor-hc-sr04.html). I went with a slightly upgraded and waterproof version: the [JSN-SR04T Waterproof Ultrasonic Sensor](https://components101.com/sensors/jsnsr04t-waterproof-ultrasonic-sensor-pinout-datasheet-working-application-alternative).
+This is a nice alternative for a few reasons:
 
-For this purpose, I built a separate ESPHome device using an ESP8266 and a [VL53L1X (datasheet)](https://www.st.com/resource/en/datasheet/vl53l1x.pdf) laser time-of-flight (ToF) sensor. By bouncing lasers off of my car and timing how long the laser takes to return to the sensor, we can calculate how far away the car is.
+- Longer sensing range
+- Waterproof/protected sensor (nice for a garage that I also use as a workshop)
+- Compatible with the same ultrasonic libraries that work for the SR04
+- Comes with long connection wires that makes mounting in the garage easier
 
-I 3D printed a basic enclosure for this sensor and mounted it on my garage wall directly in line with the car's bumper. After I calibrated it to work for the ideal garage parking spot, I had a standard Home Assistant sensor that indicated how far the car had to move to be in the ideal spot.
-
-### TODO: Image of the sensor unit
+I mounted the sensors on the garage wall, carefully aligned with each car's bumper. After some calibration to determine the ideal parking position, the system provides real-time distance measurements through Home Assistant.
 
 With some more ESPHome configuration and lambdas, changes to the distance will update the hand/walk signal and the number display.
 
 ```yaml
 sensor:
-  - platform: homeassistant
-    name: "Remote Range Sensor - Right"
-    entity_id: sensor.garage_parking_sensor_right_distance
+  - platform: ultrasonic
+    name: "Range Sensor - Left"
+    unit_of_measurement: "inches"
+    # ...
     on_value:
       then:
         # Display the distance the car has to move. If it's an invalid reading, blank the display.
@@ -123,20 +145,20 @@ sensor:
               if (isnan(x)) {
                 return -10;
               }
-              if (id(range_status_right).state != 0) {
+              int display_value = max( -9, min( (int)(round(x) - id(target_distance_left).state), 99 ));
+
+              if (display_value >= 20) {
+                // Distances over 20 are noisy. Just display "--"
                 return -11;
               }
 
-              return max( -9, min( (int)(round(x) - id(target_distance_right).state), 99 ));
+              return display_value;
         # Update the hand/walk signals accordingly. If the car is less than 3 inches from the target, display the hand. Otherwise, display the walk.
         - lambda: |-
             if (isnan(x)) {
               id(light_hand).turn_off().perform();
               id(light_walk).turn_off().perform();
-            } else if (id(range_status_right).state != 0) {
-              id(light_hand).turn_off().perform();
-              id(light_walk).turn_on().perform();
-            } else if ((x - id(target_distance_right).state) < 3) {
+            } else if ((x - id(target_distance_left).state) < 3) {
               id(light_hand).turn_on().perform();
               id(light_walk).turn_off().perform();
             } else {
@@ -145,7 +167,8 @@ sensor:
             }
 ```
 
-Finally, using Home Assistant automations, turn on the parking sensor when the garage door opens and automatically turn it off after 5 minutes. This enables a fully automatic parking flow using only the garage door opener remote.
+To make the system completely integrated, I added Home Assistant automations that automatically activate the correct parking sensor when a garage door opens.
+This creates a seamless experience where opening the garage door with the remote is the only action needed. Everything else happens automatically.
 
 ## Live Demo!
 
@@ -158,22 +181,14 @@ While I imagine each type of pedestrian signal is unique, this project should be
 
 ### Parts
 
-#### Sign
-
 - Pedestrian Crossing Signal with Countdown Display: [eBay listing](https://www.ebay.com/itm/125992762337), [Manufacturer page with datasheet](https://www.eoi.com.tw/Product/Product_Detial_TS?product_id=2268)
 - ESP32: [ESP32 D1 Mini on AliExpress](https://www.aliexpress.us/item/3256804611055118.html)
 - WS2815 12VDC Individually-Addressable RGB LED Strip: [BTFLighting on AliExpress](https://www.aliexpress.us/item/2251832774866810.html)
 - Miscellaneous 12+V DC MOSFETs for controlling the hand/walk LEDs
 - 12V DC Power Supply
-
-#### Sensors
-
-- ESP8266 (or ESP32): I use [cheap D1 Mini boards like this one](https://www.aliexpress.us/item/2251832488149071.html) for projects like this.
-- VL53L1X Laser ToF Sensor: Note that there are different models with different ranges. I ordered the VL53L1X model from [here on AliExpress](https://www.aliexpress.us/item/3256802905626316.html).
-  - [Datasheet from the manufacturer](https://www.st.com/resource/en/datasheet/vl53l1x.pdf)
+- JSN SR-04T Waterproof Ultrasonic Sensors: Available on Amazon/AliExpress/etc. [Datasheet](https://rjrorwxhjiilll5q.ldycdn.com/JSN-SR04T-3.0-aidnqBpoKliRljSlqnqkilqj.pdf)
 
 ### Code
 
-- [ESPHome config for the light](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sign.yaml)
-- ESPHome config for a sensor: [Base template](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/common/garage_parking_sensor_base.yaml), [Device config](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sensor_right.yaml), [Custom ESPHome library for using the VL53L1X sensor (which I've slightly modified in my version)](https://github.com/mrtoy-me/esphome-my-components/tree/main/components/vl53l1x)
+- [ESPHome config](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/esphome/garage_parking_sign.yaml)
 - [Home Assistant package with automations](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/garage_parking_sign.yaml)
