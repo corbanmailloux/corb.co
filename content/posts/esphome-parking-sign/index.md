@@ -1,5 +1,5 @@
 ---
-title: "Pedestrian Crossing Light as Parking Marker"
+title: "Pedestrian Crossing Light as Parking Sensor"
 date: 2024-03-12T00:00:00-05:00
 
 description: "Repurposing a pedestrian crossing light as a garage parking system using ESPHome"
