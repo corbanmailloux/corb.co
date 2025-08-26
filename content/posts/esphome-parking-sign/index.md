@@ -23,7 +23,7 @@ Have you ever struggled to park perfectly in your garage? Sure, you could hang a
 {{< figure src="sign-example.jpg"
 alt="Pedestrian crossing light showing a walk signal and the number 42."
 align=center
-height=500 >}}
+width="100%" >}}
 
 Turns out you can find anything on eBay, including a [pedestrian crossing signal](https://www.ebay.com/itm/125992762337) for just $40. This particular model was perfect because it had everything I was looking for:
 
@@ -56,7 +56,7 @@ Instead, I opted for a more DIY solution: replacing the original LEDs with addre
 {{< figure src="number-displays-raw.jpg"
 alt="RGB strips cut and arranged in the pattern of two 7-segment displays"
 align=center
-height=500
+width="100%"
 caption="I didn't think to paint the backing board black until _after_ mounting these strips...">}}
 
 ## Making it Smart: Control System
@@ -66,7 +66,7 @@ For the brains of the operation, I chose an ESP32 coupled with some basic MOSFET
 {{< figure src="finished-internals.jpeg"
 alt="Internals of a pedestrian crossing light, with additional wires and a microcontroller wedges into the extra space."
 align=center
-height=500 >}}
+width="100%" >}}
 
 On the software side, I went with [ESPHome](https://www.esphome.io/), an excellent firmware framework that integrates seamlessly with Home Assistant.
 
@@ -112,7 +112,7 @@ In Home Assistant, there is now a simple number input that I can set to any vali
 {{< figure src="hass-device-card.png"
 alt="Cropped screenshot of a number entry box and two switches in Home Assistant."
 align=center
-height=500 >}}
+width="100%" >}}
 
 ## Making it Useful: Parking Distance Sensing
 

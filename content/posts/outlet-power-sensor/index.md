@@ -38,7 +38,7 @@ What if I could just plug in a device to the outlet that would detect if the swi
 
 Enter the "outlet power sensor" (better name pending. [Suggestions?](mailto:outlet-power-sensor@corb.co))
 
-{{< figure src="outlet-power-sensor.jpg" title="Initial Prototype Sensor" alt="Prototype sensor" >}}
+{{< figure src="outlet-power-sensor.jpg" title="Initial Prototype Sensor" alt="Prototype sensor" width="100%" >}}
 
 The sensor has two separate plugs on it that must both be plugged in. One is constant power to run the device, and the other is the sensor plug. When the sensor plug is connected to power, a `binary_sensor` in Home Assistant will be activated instantly.
 
@@ -130,7 +130,7 @@ Using ESPHome has another benefit: autodiscovery in Home Assistant. If you flash
 
 After it's set up, you should have a new entry in the "Configuration -> Devices" menu of Home Assistant:
 
-{{< figure src="esphome-device-in-home-assistant.jpg#center" alt="Screenshot of Home Assistant integration" >}}
+{{< figure src="esphome-device-in-home-assistant.jpg" alt="Screenshot of Home Assistant integration" width="100%" align=center >}}
 At this point, you can flip the switch on the wall and you should see the outlet sensor entity change state. That means we're almost done.
 
 ### Automation
