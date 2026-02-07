@@ -29,24 +29,24 @@ I've lived in several apartments where the wall switch controls a single socket 
 
 What if I could just plug in a device to the outlet that would detect if the switch was on or off? Functionally that would be identical to installing a smart switch, but it could be installed and removed in seconds by just unplugging it.
 
-Enter the "outlet power sensor" (better name pending. [Suggestions?](mailto:outlet-power-sensor@corb.co))
+Enter the "outlet power sensor" (name pending — [suggestions?](mailto:outlet-power-sensor@corb.co))
 
-{{< figure src="outlet-power-sensor.jpg" title="Initial Prototype Sensor" alt="Prototype sensor" width="90%" align=center >}}
+{{< figure src="outlet-power-sensor.webp" title="Initial Prototype Sensor" alt="Prototype sensor" width="90%" align=center >}}
 
-The sensor has two separate plugs on it that must both be plugged in. One is constant power to run the device, and the other is the sensor plug. When the sensor plug is connected to power, a `binary_sensor` in Home Assistant will be activated instantly.
+The sensor has two separate plugs that must both be connected. One provides constant power to run the device, and the other is the sensor plug. When the sensor plug is connected to power, a `binary_sensor` in Home Assistant will be activated instantly.
 
-By simply plugging these two plugs into the switched and unswitched sockets of an outlet, you can instantly convert a wall switch into a smart switch.
+By plugging these two plugs into the switched and unswitched sockets of an outlet, you can instantly convert a wall switch into a smart switch.
 
-This version also has two _output_ sockets. One is connected to constant power to allow you to still use the outlet even though this device takes up both sockets. The other output is connected to a relay and exposed in Home Assistant as a separate `switch` component, allowing independent control of additional devices.
-If you don't need any outputs, the wiring can be simplified.
+This version also includes two _output_ sockets. One is connected to constant power so you can still use the outlet even though this device occupies both sockets. The other output is connected to a relay and exposed in Home Assistant as a separate `switch` component, allowing independent control of additional devices.
+If you don't need outputs, the wiring can be simplified.
 
 ## Real-World Usage
 
-So it's a cool device, but what does it actually do? Here's an example of how I use them.
+So it's a useful device, but what does it actually do? Here's an example from my setup.
 
-In my bedroom, there is a wall switch next to the door. That switch normally controls an outlet in a pretty inconvenient location, not at all where I wanted to put the main light for the room. We put a floor lamp with a smart bulb in our ideal placement spot and set up control of the light with remotes on our bedside tables. That left only voice control to turn on the light when you enter the room and a useless switch on the wall, confusing guests and lowering the family approval factor.
+In my bedroom, a wall switch next to the door normally controls an outlet in an inconvenient location, not where I wanted the main light. I put a floor lamp with a smart bulb in the ideal spot and set up control of the light with remotes on our bedside tables. That left only voice control to turn on the light when you enter the room and a confusing, effectively useless wall switch for guests.
 
-I plugged in an outlet power sensor to the switched outlet and wrote a [very simple automation](#automation) so toggling the wall switch toggles the lamp. This is now the best of all options: I can control the light from the wall switch, automations, bedside remotes, phones, and voice control, all without modifying any wiring.
+I plugged an Outlet Power Sensor™ into the switched outlet and wrote a [very simple automation](#automation) so toggling the wall switch toggles the lamp. Now I can control the light from the wall switch, automations, bedside remotes, phones, and voice control. All without modifying any wiring.
 
 ## I'm sold. How do I build one?
 
@@ -56,20 +56,22 @@ I plugged in an outlet power sensor to the switched outlet and wrote a [very sim
 
 I had this idea a few years back and was surprised there wasn't a product on the market for it. It seems the apartment-dwelling home automation market is still small. I've built a few versions over time — including a clever setup that involved disassembling an LED nightlight — but ultimately didn't feel like the projects were safe enough to share with other people.
 
-Then I realized I could build one out of a [Shelly](https://shelly.cloud/products/shelly-1-smart-home-automation-relay/). If you're unfamiliar, it's a $10 WiFi relay intended to be mounted behind an existing switch to convert a standard switch into a smart switch. Sounds very similar to what we're doing!
+Then I realized I could build one out of a [Shelly](https://us.shelly.com/products/shelly-1-gen3). If you're unfamiliar, it's a cheap WiFi relay intended to be mounted behind an existing switch to convert a standard switch into a smart switch. Sounds very similar to what we're doing!
 The Shelly already provides the high-voltage connections we need safely, and it's a trusted, UL-listed device. It's definitely a step up from hacking up a nightlight.
 
 ### Parts List
 
-- 1 × [Shelly 1](https://shop.shelly.cloud/shelly-1-wifi-smart-home-automation#50) - about $10
+- 1 × [Shelly 1](https://us.shelly.com/products/shelly-1-gen3) - about $20
 - 2 × basic indoor extension cords like [this one](https://www.homedepot.com/p/HDX-6-ft-16-2-Indoor-Cube-Tap-Extension-Cord-White-HD-145-017/100672781) - about $3
   - Any basic extension cords will work. You'll be cutting them down to your preferred length, so shorter is better.
   - If you'd like to use a grounded version like [this one](https://www.homedepot.com/p/HDX-8-ft-16-3-Indoor-Extension-Cord-SPT21638WH/304159859), you'll have to identify and connect all of the ground wires together as well.
 - 2 × wire nuts or [WAGOs](https://www.amazon.com/WAGO-221-412-VE00-2500-221-Conductor/dp/B073486KNT) - basically free (buy a mixed pack and keep them on hand)
 
+Note that Shelly now has many versions. The [Shelly 1 Mini](https://us.shelly.com/products/shelly-1-mini-gen3) would likely be a perfect replacement for the older Shelly 1. Just make sure you use the correct terminals and [update the GPIO pins and board type accordingly in ESPHome](https://devices.esphome.io/devices/shelly-1-mini-gen3/).
+
 ### Wiring Diagram
 
-#### TODO: Add wiring diagram
+{{< figure src="schematic.webp" alt="Wiring Diagram" width="70%" align=center caption="Diagram for the simple version without outputs" >}}
 
 ## Software - ESPHome
 
@@ -124,7 +126,7 @@ Using ESPHome has another benefit: autodiscovery in Home Assistant. If you flash
 
 After it's set up, you should have a new entry in the "Configuration -> Devices" menu of Home Assistant:
 
-{{< figure src="esphome-device-in-home-assistant.jpg" alt="Screenshot of Home Assistant integration" width="70%" align=center >}}
+{{< figure src="esphome-device-in-home-assistant.webp" alt="Screenshot of Home Assistant integration" width="70%" align=center >}}
 At this point, you can flip the switch on the wall and you should see the outlet sensor entity change state. That means we're almost done.
 
 ### Automation
@@ -149,7 +151,7 @@ automation:
         to: "off"
     action:
       - choose:
-          # Off, turn on full brightness.
+          # If currently off, turn on full brightness.
           - conditions:
               - condition: state
                 entity_id: light.bedroom_lamp
@@ -160,7 +162,7 @@ automation:
                 data:
                   # Always set it to full brightness when turning on.
                   brightness: 255
-          # On, turn off.
+          # If currently on, turn off.
           - conditions:
               - condition: state
                 entity_id: light.bedroom_lamp
