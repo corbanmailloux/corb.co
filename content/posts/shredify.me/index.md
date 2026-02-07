@@ -18,7 +18,7 @@ aliases:
 
 [Shredify.me (now hosted at shredify.corb.co)](http://shredify.corb.co/) is a site that matches excellent celebrity photos (like "Shreddy White" here) with excellent (read: ridiculous) metal versions of related music.
 
-{{< image src="betty-white.jpg" alt="Shreddy White" class="shredify-image" >}}
+{{< image src="betty-white.webp" alt="Shreddy White" class="shredify-image" >}}
 
 For example, we have:
 

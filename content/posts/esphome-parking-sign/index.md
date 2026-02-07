@@ -20,10 +20,10 @@ Have you ever struggled to park perfectly in your garage? Sure, you could hang a
 
 ## The Light
 
-{{< figure src="sign-example.jpg"
+{{< figure src="sign-example.webp"
 alt="Pedestrian crossing light showing a walk signal and the number 42."
 align=center
-width="100%" >}}
+width="80%" >}}
 
 Turns out you can find anything on eBay, including a [pedestrian crossing signal](https://www.ebay.com/itm/125992762337) for just $40. This particular model was perfect because it had everything I was looking for:
 
@@ -53,20 +53,20 @@ The numerical displays required a different approach. While I _could_ have desig
 
 Instead, I opted for a more DIY solution: replacing the original LEDs with addressable RGB LED strips. By carefully cutting and chaining the strips to follow the segment patterns, I created a fully software-controllable display that offered bonus features like color control and effects.
 
-{{< figure src="number-displays-raw.jpg"
+{{< figure src="number-displays-raw.webp"
 alt="RGB strips cut and arranged in the pattern of two 7-segment displays"
 align=center
-width="100%"
-caption="I didn't think to paint the backing board black until _after_ mounting these strips...">}}
+width="80%"
+caption="Unfortunately, I didn't think to paint the backing board black until _after_ mounting the strips...">}}
 
 ## Making it Smart: Control System
 
 For the brains of the operation, I chose an ESP32 coupled with some basic MOSFETs to handle the power switching for the walk/hand signals. I soldered these components to a piece of perfboard and managed to fit it in some empty space within the housing.
 
-{{< figure src="finished-internals.jpeg"
+{{< figure src="finished-internals.webp"
 alt="Internals of a pedestrian crossing light, with additional wires and a microcontroller wedges into the extra space."
 align=center
-width="100%" >}}
+width="80%" >}}
 
 On the software side, I went with [ESPHome](https://www.esphome.io/), an excellent firmware framework that integrates seamlessly with Home Assistant.
 
@@ -109,10 +109,10 @@ To make controlling the numbers from Home Assistant more practical, I also added
 
 In Home Assistant, there is now a simple number input that I can set to any valid number to update the display.
 
-{{< figure src="hass-device-card.png"
+{{< figure src="hass-device-card.webp"
 alt="Cropped screenshot of a number entry box and two switches in Home Assistant."
 align=center
-width="100%" >}}
+width="80%" >}}
 
 ## Making it Useful: Parking Distance Sensing
 

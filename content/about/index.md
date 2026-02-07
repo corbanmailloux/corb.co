@@ -4,7 +4,7 @@ date: 2021-01-01
 
 hidemeta: true
 cover:
-  image: "corban-mailloux.jpg"
+  image: "corban-mailloux.webp"
   hidden: false
 ---
 
@@ -17,7 +17,7 @@ I'm an alumnus of [Rochester Institute of Technology](https://www.rit.edu/comput
 Outside of work, I enjoy home improvement projects, flying FPV drones, and making music. I've recently joined a band called [Well Suited](https://wellsuitedband.com) where you'll see me playing saxophone plus occasional backing vocals and keys.
 
 At home, I'm a new dad (!!) and I have two cats that I've trained to do various tricks including jumping through hoops, walking upright, and heeling by my side. You can find many of wonderful cat pictures on [@theladies_sashaandmaya's Instagram {{< fontawesome instagram >}}](https://www.instagram.com/theladies_sashaandmaya/?r=nametag).
-{{< figure src="maya-and-sasha.jpg" align=center link="https://www.instagram.com/theladies_sashaandmaya/?r=nametag" width=100% alt="Collage of cat pictures" >}}
+{{< figure src="maya-and-sasha.webp" align=center link="https://www.instagram.com/theladies_sashaandmaya/?r=nametag" width=80% alt="Collage of cat pictures" >}}
 
 As you'll see in my [projects](/categories/projects/), I like to work on home automation projects and generally enjoy DIY electronics. I'm a big fan and occasional contributor to [Home Assistant](https://www.home-assistant.io/), an open-source, Python-based platform that integrates with just about everything. You can find my complete Home Assistant configuration on [{{< fontawesome github >}} Github](https://github.com/corbanmailloux/home-assistant-configuration).
 

@@ -6,7 +6,7 @@ description: "Removing unreliable cloud dependencies AND improving functionality
 summary: "Removing unreliable cloud dependencies AND improving functionality!"
 
 cover:
-  image: "box-with-adapter.jpeg"
+  image: "box-with-adapter.webp"
 
 showtoc: false
 
@@ -34,18 +34,18 @@ Unfortunately, it's out of stock at the time of writing, but the shop owner clai
 
 The documentation and ESPHome configuration for the boards are here: https://github.com/tinwer-group/mahtanar
 
-{{< figure src="bare-board.jpg" alt="Image of bare circuit board of the adapter" width=80% align=center >}}
+{{< figure src="bare-board.webp" alt="Image of bare circuit board of the adapter" width=80% align=center >}}
 
 ## Packaging and Installing
 
 The product above is just a bare board, so I needed an enclosure to protect it when mounted to my indoor HVAC units.
 I made a quick 3D model to have a properly fitting case. The model is [available on Thingiverse](https://www.thingiverse.com/thing:7012310).
 
-{{< figure src="box-with-adapter.jpeg" alt="3D printed enclosure with board installed" width=80% align=center >}}
+{{< figure src="box-with-adapter.webp" alt="3D printed enclosure with board installed" width=80% align=center >}}
 
 With that done, it's as simple as unplugging the old Kumo Cloud adapter and plugging this ESPHome adapter in its place!
 
-{{< figure src="adapter-installed-crop.jpeg" alt="Side of an HVAC air handler with the new enclosure mounted" width=60% align=center caption="The lower box is the new adapter and the upper box is the base station for the MHK2 thermostat." >}}
+{{< figure src="adapter-installed.webp" alt="Side of an HVAC air handler with the new enclosure mounted" width=60% align=center caption="The lower box is the new adapter and the upper box is the base station for the MHK2 thermostat." >}}
 
 ## Usage in Home Assistant
 
