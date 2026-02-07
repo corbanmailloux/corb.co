@@ -18,13 +18,6 @@ draft: true
 
 ## The Problem
 
-I don't (currently) own a house, but I love home automation projects. Because I live in an apartment, I can't easily make modifications to the building wiring or install certain projects that require mounting or power.
-While this does limit some automation ideas, I've found creative solutions to most of the problems.
-
-A good example is smart switches. If I want to use the existing wall switches as inputs into my home automation system, the standard answer is to just replace the switch with a smart switch. My building manager would not like that.
-
----
-
 I've lived in several apartments where the wall switch controls a single socket of one outlet. The expectation is that you would plug a floor lamp into that outlet and use the wall switch to control it, but I like to have all of my lighting integrated into my home automation system. That leaves a couple options:
 
 - Replace the switch with a smart switch. This is the best answer and the one I would do, but I can't modify the wiring in an apartment so that's a non-starter.
@@ -38,7 +31,7 @@ What if I could just plug in a device to the outlet that would detect if the swi
 
 Enter the "outlet power sensor" (better name pending. [Suggestions?](mailto:outlet-power-sensor@corb.co))
 
-{{< figure src="outlet-power-sensor.jpg" title="Initial Prototype Sensor" alt="Prototype sensor" width="100%" >}}
+{{< figure src="outlet-power-sensor.jpg" title="Initial Prototype Sensor" alt="Prototype sensor" width="90%" align=center >}}
 
 The sensor has two separate plugs on it that must both be plugged in. One is constant power to run the device, and the other is the sensor plug. When the sensor plug is connected to power, a `binary_sensor` in Home Assistant will be activated instantly.
 
@@ -53,7 +46,7 @@ So it's a cool device, but what does it actually do? Here's an example of how I 
 
 In my bedroom, there is a wall switch next to the door. That switch normally controls an outlet in a pretty inconvenient location, not at all where I wanted to put the main light for the room. We put a floor lamp with a smart bulb in our ideal placement spot and set up control of the light with remotes on our bedside tables. That left only voice control to turn on the light when you enter the room and a useless switch on the wall, confusing guests and lowering the family approval factor.
 
-I plugged in an outlet power sensor to the switched outlet and wrote a [very simple automation](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/bedroom_outlet_sensor.yaml) so toggling the wall switch toggles the lamp. This is now the best of all options: I can control the light from the wall switch, automations, bedside remotes, phones, and voice control, all without modifying any wiring.
+I plugged in an outlet power sensor to the switched outlet and wrote a [very simple automation](#automation) so toggling the wall switch toggles the lamp. This is now the best of all options: I can control the light from the wall switch, automations, bedside remotes, phones, and voice control, all without modifying any wiring.
 
 ## I'm sold. How do I build one?
 
@@ -92,7 +85,8 @@ First is the boilerplate stuff:
 ```yaml
 esphome:
   name: bedroom_outlet_sensor
-  platform: ESP8266
+
+esp8266:
   board: esp01_1m
 
 wifi:
@@ -104,7 +98,7 @@ api:
 ota:
 ```
 
-Note that the `wifi` settings use `!secrets`. This works very similarly to [Home Assistant secrets](https://www.home-assistant.io/docs/configuration/secrets/), allowing you to extract private information from the YAML configurations.
+Note that the `wifi` settings use `!secrets`. [This feature](https://esphome.io/guides/yaml/#secrets-and-the-secretsyaml-file) allows you to extract private information from the YAML configurations.
 
 Then we get into the slightly more interesting stuff: inputs and outputs.
 
@@ -130,7 +124,7 @@ Using ESPHome has another benefit: autodiscovery in Home Assistant. If you flash
 
 After it's set up, you should have a new entry in the "Configuration -> Devices" menu of Home Assistant:
 
-{{< figure src="esphome-device-in-home-assistant.jpg" alt="Screenshot of Home Assistant integration" width="100%" align=center >}}
+{{< figure src="esphome-device-in-home-assistant.jpg" alt="Screenshot of Home Assistant integration" width="70%" align=center >}}
 At this point, you can flip the switch on the wall and you should see the outlet sensor entity change state. That means we're almost done.
 
 ### Automation
@@ -178,6 +172,6 @@ automation:
 
 ## Wrapping Up
 
-I've been using two of these simple devices in my apartment for about 6 months now and I'm amazed by how good the experience is. As a renter, replacing fixtures and switches is out of the question, but these sensors give the full smart switch experience with no permanent modifications. They also improve the overall user experience because they use an existing, well-known setup that guests don't have to understand to use. To everyone other than me, the switch just controls the light, and that's all they have to know. Finally, by decoupling the light switch from the light itself, I can configure multiple inputs and multiple outputs. I can turn the light on with the light switch, have it dim automatically when we watch a movie, and turn it off from a [bedside button](https://github.com/corbanmailloux/home-assistant-configuration/blob/master/packages/bedside_button_2_corban.yaml) as part of my nighttime routine.
+I've been using two of these simple devices in my apartment for about 6 months now and I'm amazed by how good the experience is. As a renter, replacing fixtures and switches is out of the question, but these sensors give the full smart switch experience with no permanent modifications. They also improve the overall user experience because they use an existing, well-known setup that guests don't have to understand to use. To everyone other than me, the switch just controls the light, and that's all they have to know. Finally, by decoupling the light switch from the light itself, I can configure multiple inputs and multiple outputs. I can turn the light on with the light switch, have it dim automatically when we watch a movie, and turn it off from my bedside button as part of my nighttime routine.
 
 Good home automation is all about improving the experience without getting in the way; this project has fulfilled both of those goals.
