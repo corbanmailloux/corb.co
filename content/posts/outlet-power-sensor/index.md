@@ -12,8 +12,6 @@ tags:
 
 categories:
   - Projects
-
-draft: true
 ---
 
 ## The Problem
@@ -31,7 +29,7 @@ What if I could just plug in a device to the outlet that would detect if the swi
 
 Enter the "outlet power sensor" (name pending — [suggestions?](mailto:outlet-power-sensor@corb.co))
 
-{{< figure src="outlet-power-sensor.webp" title="Initial Prototype Sensor" alt="Prototype sensor" width="90%" align=center >}}
+{{< figure src="outlet-power-sensor.webp" caption="Prototype sensor with switched output" alt="Prototype sensor" width="90%" align=center >}}
 
 The sensor has two separate plugs that must both be connected. One provides constant power to run the device, and the other is the sensor plug. When the sensor plug is connected to power, a `binary_sensor` in Home Assistant will be activated instantly.
 
@@ -69,9 +67,13 @@ The Shelly already provides the high-voltage connections we need safely, and it'
 
 Note that Shelly now has many versions. The [Shelly 1 Mini](https://us.shelly.com/products/shelly-1-mini-gen3) would likely be a perfect replacement for the older Shelly 1. Just make sure you use the correct terminals and [update the GPIO pins and board type accordingly in ESPHome](https://devices.esphome.io/devices/shelly-1-mini-gen3/).
 
-### Wiring Diagram
+### Wiring
 
 {{< figure src="schematic.webp" alt="Wiring Diagram" width="70%" align=center caption="Diagram for the simple version without outputs" >}}
+
+For the version without outputs, the wiring is very simple. The Shelly is powered by the line/hot (`L`) and neutral (`N`) wires from the unswitched outlet. From the switched outlet, connect the line/hot side (smaller slot) to connect to the switch input (`SW`) on the Shelly. This way, the Shelly can sense when there is power on the switched outlet.
+
+The `O` and `I` terminals are not used for this setup. If you want to have a separate switched _output_, you'll use these terminals to pass through the relay.
 
 ## Software - ESPHome
 
@@ -112,6 +114,7 @@ binary_sensor:
     name: "Bedroom Outlet Sensor"
     device_class: power
 
+# Only relevant if you included outputs.
 switch:
   - platform: gpio
     pin: GPIO4
@@ -124,9 +127,10 @@ That's the entire configuration. It just sets up a `binary_sensor` representing 
 
 Using ESPHome has another benefit: autodiscovery in Home Assistant. If you flash the new configuration to your Shelly, Home Assistant should prompt you to configure the device automatically.
 
-After it's set up, you should have a new entry in the "Configuration -> Devices" menu of Home Assistant:
+After it's set up, you should have a new entry in the "Settings → Devices" menu of Home Assistant:
 
 {{< figure src="esphome-device-in-home-assistant.webp" alt="Screenshot of Home Assistant integration" width="70%" align=center >}}
+
 At this point, you can flip the switch on the wall and you should see the outlet sensor entity change state. That means we're almost done.
 
 ### Automation
