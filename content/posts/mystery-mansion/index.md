@@ -5,6 +5,10 @@ date: 2016-01-10
 description: A quick Python rebuild of a classic electronic board game.
 summary: A quick Python rebuild of a classic electronic board game.
 
+cover:
+  image: card.webp
+  alt: "Electronic Mystery Mansion console displaying a clue"
+
 tags:
   - Game
   - Software Project

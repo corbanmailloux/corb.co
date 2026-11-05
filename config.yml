@@ -101,10 +101,10 @@ params:
   #     SiteVerificationTag: "XYZabc"
 
   cover:
-    hidden: true # hide everywhere but not in structured data
-    responsiveImages: false
-    hiddenInList: true # hide on list pages and home
-    # hiddenInSingle: false # hide on single page
+    hidden: false # covers are used as post list thumbnails
+    responsiveImages: true
+    hiddenInList: false # show post cover images on list pages
+    hiddenInSingle: true # avoid repeating the cover above the post body
 
   # for search
   # https://fusejs.io/api/options.html

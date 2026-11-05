@@ -51,6 +51,38 @@
 }
 
 
+/* Post list cover images */
+
+.post-entry .entry-cover {
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.post-entry .entry-cover img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .post-entry:hover .entry-cover img {
+        transform: scale(1.03);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .post-entry .entry-cover img {
+        transition: none;
+    }
+
+    .post-entry:hover .entry-cover img {
+        transform: none;
+    }
+}
+
+
 /* Custom for Shredify.me */
 
 .shredify-image {

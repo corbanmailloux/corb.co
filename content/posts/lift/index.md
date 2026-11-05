@@ -6,7 +6,8 @@ description: Tracking the "only" important statistic
 summary: Daily check-in workout tracker for beefcakes.
 
 cover:
-  image: lift.svg
+  image: card.webp
+  alt: "Cartoon flexed bicep icon"
 
 tags:
   - Software Project

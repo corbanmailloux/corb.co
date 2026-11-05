@@ -5,6 +5,10 @@ date: 2012-06-13
 description: Bluetooth control of RGB LEDs with Arduino and Android App Inventor
 summary: Bluetooth control of RGB LEDs with Arduino and Android App Inventor.
 
+cover:
+  image: card.webp
+  alt: "Breadboard wiring diagram for the RGBDuino project"
+
 tags:
   - Microcontroller
   - Software Project

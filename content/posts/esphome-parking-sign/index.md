@@ -5,6 +5,10 @@ date: 2024-03-12T00:00:00-05:00
 description: "Repurposing a pedestrian crossing light as a garage parking system using ESPHome"
 summary: "Repurposing a pedestrian crossing light as a garage parking system using ESPHome"
 
+cover:
+  image: sign-example.webp
+  alt: "Pedestrian crossing light showing a walk signal and the number 42."
+
 showtoc: false
 
 tags:

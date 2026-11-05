@@ -5,6 +5,10 @@ date: 2015-02-10
 description: Will It Shred?
 summary: Will It Shred?
 
+cover:
+  image: betty-white.webp
+  alt: "Betty White making a rock sign"
+
 tags:
   - Website
   - Software Project

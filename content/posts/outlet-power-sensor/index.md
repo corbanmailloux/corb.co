@@ -5,6 +5,10 @@ date: 2022-01-16
 description: "A renter-friendly system to create smart switches out of switched outlets."
 summary: "A renter-friendly system to create smart switches out of switched outlets."
 
+cover:
+  image: outlet-power-sensor.webp
+  alt: "Prototype outlet power sensor with two plugs and two sockets"
+
 showtoc: false
 
 tags:
