@@ -1,5 +1,5 @@
 baseURL: "https://corb.co"
-languageCode: "en-us"
+locale: "en-us"
 title: "corb.co"
 theme: "PaperMod"
 
@@ -35,9 +35,8 @@ params:
   comments: false
   disableScrollToTop: true
 
-  # Disable light/dark switching for now.
-  defaultTheme: light
-  disableThemeToggle: true
+  defaultTheme: auto
+  disableThemeToggle: false
 
   disableSpecial1stPost: false
 
