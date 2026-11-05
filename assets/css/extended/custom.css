@@ -2,6 +2,12 @@
   border-radius: 0px;
 }
 
+/* Brighten the logo a bit in dark mode. */
+
+[data-theme="dark"] .logo a img {
+  filter: brightness(1.3);
+}
+
 /* Override the bottom margin on images. Otherwise this is set to `margin: auto` */
 
 .post-content img {
