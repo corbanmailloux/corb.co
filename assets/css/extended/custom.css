@@ -52,12 +52,6 @@
   position: relative;
 }
 
-/* Hide the copyright. */
-
-.footer {
-  display: none;
-}
-
 /* Post list cover images */
 
 .post-entry .entry-cover {

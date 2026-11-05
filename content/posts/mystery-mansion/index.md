@@ -8,6 +8,7 @@ summary: A quick Python rebuild of a classic electronic board game.
 cover:
   image: card.webp
   alt: "Electronic Mystery Mansion console displaying a clue"
+  relative: true
 
 tags:
   - Game

@@ -8,6 +8,7 @@ summary: "Removing unreliable cloud dependencies AND improving functionality!"
 cover:
   image: "box-with-adapter.webp"
   alt: "3D printed enclosure with the ESPHome adapter board installed"
+  relative: true
 
 showtoc: false
 

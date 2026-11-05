@@ -8,6 +8,7 @@ summary: Internet-controllable RGB lighting using Arduino.
 cover:
   image: card.webp
   alt: "RGB controller app screenshot with a rainbow color wheel"
+  relative: true
 
 tags:
   - Microcontroller

@@ -8,6 +8,7 @@ summary: Will It Shred?
 cover:
   image: betty-white.webp
   alt: "Betty White making a rock sign"
+  relative: true
 
 tags:
   - Website

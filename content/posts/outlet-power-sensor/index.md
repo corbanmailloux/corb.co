@@ -8,6 +8,7 @@ summary: "A renter-friendly system to create smart switches out of switched outl
 cover:
   image: outlet-power-sensor.webp
   alt: "Prototype outlet power sensor with two plugs and two sockets"
+  relative: true
 
 showtoc: false
 

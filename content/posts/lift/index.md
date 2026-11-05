@@ -8,6 +8,7 @@ summary: Daily check-in workout tracker for beefcakes.
 cover:
   image: card.webp
   alt: "Cartoon flexed bicep icon"
+  relative: true
 
 tags:
   - Software Project

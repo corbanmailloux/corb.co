@@ -6,6 +6,7 @@ hidemeta: true
 cover:
   image: "corban-mailloux.webp"
   hidden: false
+  relative: true
 ---
 
 Hey! I'm Corban Mailloux. 👋🏼

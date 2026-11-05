@@ -1,5 +1,5 @@
 baseURL: "https://corb.co"
-locale: "en-us"
+locale: "en-US"
 title: "corb.co"
 theme: "PaperMod"
 
@@ -34,6 +34,7 @@ params:
   ShowShareButtons: false
   comments: false
   disableScrollToTop: true
+  hideFooter: true
 
   defaultTheme: auto
   disableThemeToggle: false
@@ -41,7 +42,6 @@ params:
   disableSpecial1stPost: false
 
   assets:
-    # disableHLJS: true # to disable highlightjs
     # disableFingerprinting: true
     favicon: "/icons/favicon.ico"
     favicon16x16: "/icons/favicon-16x16.png"
@@ -94,6 +94,13 @@ params:
       url: "https://www.instagram.com/corbanmailloux/"
     - name: linkedin
       url: "https://www.linkedin.com/in/corbanmailloux"
+
+  schema:
+    publisherType: Person
+    sameAs:
+      - "https://github.com/corbanmailloux"
+      - "https://www.instagram.com/corbanmailloux/"
+      - "https://www.linkedin.com/in/corbanmailloux"
 
   # analytics:
   #   google:

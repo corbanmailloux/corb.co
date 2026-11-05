@@ -8,6 +8,7 @@ summary: "Repurposing a pedestrian crossing light as a garage parking system usi
 cover:
   image: sign-example.webp
   alt: "Pedestrian crossing light showing a walk signal and the number 42."
+  relative: true
 
 showtoc: false
 
