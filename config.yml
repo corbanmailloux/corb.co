@@ -1,4 +1,4 @@
-baseURL: "https://corb.co"
+baseURL: "https://corb.co/"
 locale: "en-US"
 title: "corb.co"
 theme: "PaperMod"
@@ -9,10 +9,10 @@ pagination:
 menu:
   main:
     - name: About
-      url: about
+      url: about/
       weight: 10
     - name: Posts
-      url: posts
+      url: posts/
       weight: 20
 
 enableRobotsTXT: false
@@ -20,10 +20,7 @@ enableRobotsTXT: false
 # buildFuture: false
 # buildExpired: false
 
-# googleAnalytics: UA-123-45
-
 params:
-  # env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: corb.co
   description: "Personal and projects site for Corban Mailloux"
   author: Corban Mailloux
@@ -32,14 +29,14 @@ params:
 
   ShowReadingTime: true
   ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
   comments: false
   disableScrollToTop: true
   hideFooter: true
 
   defaultTheme: auto
   disableThemeToggle: false
-
-  disableSpecial1stPost: false
 
   assets:
     # disableFingerprinting: true
@@ -56,7 +53,7 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: true # needs to be explicitly set
+    enabled: true
     title: 👋🏼 Hey! I'm Corban.
     subtitle: |
       🍼 Dad
@@ -78,12 +75,7 @@ params:
     imageTitle: Headshot of Corban Mailloux
     buttons:
       - name: Posts
-        url: posts
-
-  # home-info mode
-  homeInfoParams:
-    Title: "Welcome!"
-    Content: blank
+        url: posts/
 
   socialIcons:
     - name: email
@@ -101,10 +93,6 @@ params:
       - "https://github.com/corbanmailloux"
       - "https://www.instagram.com/corbanmailloux/"
       - "https://www.linkedin.com/in/corbanmailloux"
-
-  # analytics:
-  #   google:
-  #     SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: false # covers are used as post list thumbnails

@@ -3,6 +3,8 @@ title: About Corban
 date: 2021-01-01
 
 hidemeta: true
+hiddenInRss: true
+
 cover:
   image: "corban-mailloux.webp"
   hidden: false
