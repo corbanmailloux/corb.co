@@ -25,7 +25,8 @@ params:
   description: "Personal and projects site for Corban Mailloux"
   author: Corban Mailloux
 
-  # images: ["<link or path of image for opengraph, twitter-cards>"]
+  images:
+    - /images/og-default.jpg
 
   ShowReadingTime: true
   ShowShareButtons: false

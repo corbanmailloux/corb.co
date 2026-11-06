@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1200"
+   height="630"
+   viewBox="0 0 1200 630"
+   role="img"
+   aria-labelledby="og-title og-desc"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="og-default.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   inkscape:export-filename="og-default.jpg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.63"
+     inkscape:cx="613.49693"
+     inkscape:cy="294.17178"
+     inkscape:window-width="3008"
+     inkscape:window-height="1634"
+     inkscape:window-x="1920"
+     inkscape:window-y="30"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg7" />
+  <title
+     id="og-title">corb.co — Corban Mailloux</title>
+  <desc
+     id="og-desc">OpenGraph card with the corb.co logo, Corban Mailloux's name, and a headshot.</desc>
+  <!--
+    Editable source for og-default.jpg.
+    Social networks require a raster image, so export this SVG to JPG after edits.
+  -->
+  <defs
+     id="defs2">
+    <pattern
+       id="dot-grid"
+       width="40"
+       height="40"
+       patternUnits="userSpaceOnUse">
+      <circle
+         cx="20"
+         cy="20"
+         r="1"
+         fill="#e9e0d3"
+         id="circle1" />
+    </pattern>
+    <clipPath
+       id="headshot-clip">
+      <circle
+         cx="936"
+         cy="315"
+         r="245"
+         id="circle2" />
+    </clipPath>
+    <style
+       id="style2">
+      .wordmark {
+        font-family: &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+        font-size: 92px;
+        font-weight: 700;
+        fill: #003265;
+      }
+      .name {
+        font-family: Avenir, &quot;Avenir Next&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+        font-size: 62px;
+        fill: #003265;
+      }
+      .subtitle {
+        font-family: Avenir, &quot;Avenir Next&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+        font-size: 28px;
+        fill: #6a6258;
+      }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect
+     width="1200"
+     height="630"
+     fill="#f7f3ec"
+     id="rect2"
+     x="0"
+     y="0"
+     style="display:inline"
+     inkscape:label="Card Background" />
+  <rect
+     width="1200"
+     height="630"
+     fill="url(#dot-grid)"
+     id="rect3"
+     x="0"
+     y="0"
+     style="display:inline;opacity:1"
+     inkscape:label="Dotted Background" />
+  <!-- Headshot plate -->
+  <circle
+     cx="936"
+     cy="315"
+     r="315"
+     fill="#efe7da"
+     id="circle3"
+     style="display:inline" />
+  <circle
+     cx="936"
+     cy="315"
+     r="310"
+     fill="#003265"
+     id="circle4"
+     style="display:inline" />
+  <!-- Logo -->
+  <g
+     transform="translate(80 82) scale(2.2)"
+     aria-hidden="true"
+     id="g5"
+     inkscape:label="Logo">
+    <path
+       fill="#da742a"
+       d="M0 10v30h7V10c0-2 1-3 3-3h40V0H10C4 0 0 4 0 10zm10 33h40v7H10z"
+       id="path4" />
+    <path
+       fill="#003265"
+       d="M10 18v14c0 5 3 8 8 8h32v-6H18c-1.5 0-2-.5-2-2V18c0-1.5.5-2 2-2h32v-6H18c-5 0-8 3-8 8zM0 43h7v7H0z"
+       id="path5" />
+  </g>
+  <!-- Copy -->
+  <text
+     x="240.83437"
+     y="190.52792"
+     class="wordmark"
+     id="text5">corb.co</text>
+  <text
+     x="86"
+     y="344"
+     class="name"
+     id="text6">Corban Mailloux</text>
+  <text
+     x="90"
+     y="410"
+     class="subtitle"
+     xml:space="preserve"
+     id="text7"
+     style="display:inline">Engineer  ·  Home Automator  ·  Musician</text>
+  <rect
+     x="90"
+     y="470"
+     width="96"
+     height="8"
+     fill="#da742a"
+     id="rect7" />
+  <!-- Headshot (path is relative to this file) -->
+  <image
+     href="corban-mailloux.jpg"
+     xlink:href="corban-mailloux.jpg"
+     x="691"
+     y="70"
+     width="490"
+     height="490"
+     preserveAspectRatio="xMidYMid slice"
+     clip-path="url(#headshot-clip)"
+     id="image7"
+     inkscape:label="Headshot" />
+  <circle
+     cx="936"
+     cy="315"
+     r="257"
+     fill="none"
+     stroke="#da742a"
+     stroke-width="10"
+     id="circle7"
+     style="display:inline" />
+</svg>
