@@ -42,6 +42,28 @@
   border-color: #bcdff1;
 }
 
+/* Dark mode banners */
+
+[data-theme="dark"] .banner.banner-blue {
+  background-color: #2d4653;
+  color: #c0e1ed;
+  border-color: #416371;
+}
+
+[data-theme="dark"] .banner.banner-blue a {
+  color: #d4f0f7;
+}
+
+[data-theme="dark"] .banner.banner-red {
+  background-color: #503033;
+  color: #f2c0c5;
+  border-color: #6d464a;
+}
+
+[data-theme="dark"] .banner.banner-red a {
+  color: #fbdade;
+}
+
 /* For the FontAwesome short code */
 
 .inline-svg {
