@@ -2,6 +2,14 @@
   border-radius: 0px;
 }
 
+/* Search icon in the menu */
+
+#menu a[accesskey="/"] svg {
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+}
+
 /* Brighten the logo a bit in dark mode. */
 
 [data-theme="dark"] .logo a img {
